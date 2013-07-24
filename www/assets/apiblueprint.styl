@@ -1,0 +1,359 @@
+$gutter = 1em
+$color = #f43059
+$green = #7dffad
+$darkgreen = #00d779
+$limegreen = #46cc78
+$violet = #4d4588
+$greyviolet = #a19eb6
+$lightviolet = #b4bae9
+$darkviolet = #635e8c
+$darkerviolet = #352f64
+$transparentC = rgba(0,0,0,0.001)
+$maxWidth = 1200px
+$grey = #aaa
+
+$horizSpace = 2em
+$space = 1em
+
+@import 'nib'
+
+html
+  font: 0.75em/1.25 sans-serif
+  background-color: $violet
+  color: #fff
+
+.logo
+.started__question
+.started__stack
+.page__title
+  font-family 'TitilliumText', Helvetica, Arial, sans-serif
+  font-weight 100
+
+.page__title
+  font-size 300%
+  padding-bottom $space
+  line-height 100%
+  border-left 0 solid #fff
+  transition 0.2s linear border-left-width, padding-left
+
+.baseWrap
+  margin-left: auto
+  margin-right: auto
+  max-width: $maxWidth
+
+.page
+  padding-top: $gutter
+  padding-left: 1em
+  padding-right: 1em
+
+  .page__inside
+    margin: 0 auto
+    max-width: $maxWidth
+
+.logo__text--highlight
+  color: $green
+
+.logo__text
+  padding-top 3 * $gutter
+  padding-bottom 3 * $gutter
+  color rgba(255, 255, 255, 1)
+  padding-left 90px
+  background url('logo_apiblueprint.png') no-repeat left center
+
+.logo__spot
+  padding-top: $space
+  font-weight: 100
+  font-size: 3em
+  font-family: 'Proxima Nova', Helvetica, Arial, sans-serif
+  text-align: center
+  color: rgba(255, 255, 255, 1)
+  @media screen and (max-width:760px)
+    font-size: 2.5em
+
+.logo_animation
+  // placeholder
+  height: 300px
+  background-color: rgba(0, 0, 0, 0.3)
+  width: 100%
+
+.logo__brandtext
+  font-size: 2em
+  font-family: 'Proxima Nova', Helvetica, Arial, sans-serif
+  font-weight: 100
+  color: $lightviolet
+  margin-left: $space
+  margin-right: $space
+  margin-bottom: $horizSpace
+
+.logo__brandtext__info
+  display inline-block
+  padding-right 1em
+  background-color $transparentC
+
+  &:hover
+    color #fff
+
+  &::before
+    content '•'
+    padding-right 0.5em
+    font-size 133%
+
+  for ind in 0 1 2 3 4 5
+    &:nth-of-type(6n+{ind})::before
+      color rgb(hsl((180 + 60 * ind)deg, 70%, 70%))
+
+h1
+  font-size 5em
+  @media screen and (max-width:480px)
+    font-size 4em
+  margin 0
+  line-height 100%
+  font-weight 100
+  transition all 0.2s linear
+
+.hello
+  position: relative
+  margin-top: $horizSpace
+
+  pre
+  code
+    font-family 'Source Code Pro', monospace
+
+  pre
+    position relative
+    font-weight normal
+    border-radius 15px
+    background-color $darkerviolet
+    color $greyviolet
+    padding 2*$space 0
+    display block
+    margin-bottom $horizSpace
+    font-size 1.5em
+    white-space pre
+    overflow scroll
+    box-shadow 2*$space 0 0 $darkerviolet, -2*$space 0 0 $darkerviolet
+    @media screen and (max-width:480px)
+      font-size 1.3em
+    @media screen and (max-width:660px)
+      margin-bottom 1em
+
+  .hello--linewrap
+    counter-increment: linenumber
+    padding-left: 2*$space
+    position: relative
+    white-space: pre
+    &::before
+      position: absolute
+      left: 0
+      color: #827dba
+      content: "0" counter(linenumber)
+  .hello--color--method
+    color: #ada6ff
+  .hello--color--uri
+    color: #ffc98f
+  .hello--color--keyword
+    color: #fff
+  .hello--color--preformatted
+    color: #b6afff
+
+.links
+  font-size: 2em
+  font-family: 'Proxima Nova', Helvetica, Arial, sans-serif
+  font-weight: 400
+
+  .link
+    border-radius: 20em
+    padding: 0.5em 0
+    text-align: center
+    display: inline-block
+    box-sizing: border-box
+    width: 45%
+
+  .link--getStarted
+    color: #fff
+    background-color: $darkgreen
+    margin: 0 1.5% 0 3.5%
+  .link--documentation
+    color: #fff
+    background-color: #736daa
+    margin: 0 3.5% 0 1.5%
+
+  @media screen and (max-width:660px)
+    position: relative
+    font-size: 1.5em
+    top: 0
+    margin-top: 0
+    width: 100%
+
+    .link
+      width: 100%
+      margin: 0
+
+    .link--getStarted
+      margin-bottom $space
+
+  @media screen and (min-width:661px) and (max-width:860px)
+    position: absolute
+    font-size: 1.5em
+    top: 50%
+    margin-top: -2.2em
+    right: 0.25em
+    width: 12em
+
+    .link
+      width: 100%
+      margin: 0
+    .link--getStarted
+      border-radius: 20px 20px 0 0
+    .link--documentation
+      border-radius: 0 0 20px 20px
+
+  @media screen and (min-width:861px)
+    position: absolute
+    top: 50%
+    margin-top: -1.1em
+    right: 1em
+    min-width: 26em
+    text-align: right
+    font-size: 1.5em
+
+    .link--documentation
+      margin-right: 0
+
+.page--controverse
+  color: $darkviolet
+  margin-top: 2em
+  background-color: rgba(255,255,255,1)
+  @media screen and (max-width:660px)
+    background-color: rgba(255,255,255,0.001)
+
+.versus__block
+  list-style-type: none
+  padding: 0
+  margin: 0
+
+/* three items */
+.versus__item:first-child:nth-last-child(3)
+.versus__item:first-child:nth-last-child(3) ~ .versus__item
+  width 33.3333%
+
+/* four items */
+.versus__item:first-child:nth-last-child(4)
+.versus__item:first-child:nth-last-child(4) ~ .versus__item
+  width 25%
+
+.versus__item
+  padding: 0
+  margin: 0 0 2em 0
+  vertical-align: top
+  display: inline-block
+  background-color: $transparentC
+  box-sizing: border-box
+  border-left: 2em solid $transparentC
+  border-right: 2em solid $transparentC
+
+@media screen and (max-width:660px)
+  /* three items */
+  li.versus__item:first-child:nth-last-child(3)
+  li.versus__item:first-child:nth-last-child(3) ~ .versus__item
+    width 100%
+    background-color rgba(255,255,255,1)
+
+  /* four items */
+  li.versus__item:first-child:nth-last-child(4)
+  li.versus__item:first-child:nth-last-child(4) ~ .versus__item
+    width 100%
+    background-color rgba(255,255,255,1)
+
+@media screen and (min-width:661px)
+  /* three items */
+  li.versus__item:first-child:nth-last-child(3)
+  li.versus__item:first-child:nth-last-child(3) ~ .versus__item
+    width 33.3333%
+    background-color rgba(255,255,255,1)
+
+  /* four items */
+  li.versus__item:first-child:nth-last-child(4)
+  li.versus__item:first-child:nth-last-child(4) ~ .versus__item
+    width 50%
+    background-color rgba(255,255,255,1)
+
+@media screen and (min-width:1001px)
+  /* four items */
+  li.versus__item:first-child:nth-last-child(4)
+  li.versus__item:first-child:nth-last-child(4) ~ .versus__item
+    width 25%
+    background-color rgba(255,255,255,1)
+
+.versus__title
+  font-weight normal
+  text-align center
+
+.versus__word
+  color: $grey
+  @media screen and (min-width:661px) and (max-width:860px)
+    display block
+    width 100%
+    line-height 0.5em
+    height 0.5em
+
+@media screen and (max-width:660px)
+  .page--controverse
+    margin-top $space
+
+  .versus
+    .page__title
+      padding-bottom 0
+      color #fff
+
+.versus__about
+  text-align center
+
+.page--examples
+  background #413a76 linear-gradient(top, #373167, #413a76 750px)
+
+.examples__title
+  font-size 300%
+  padding-bottom $space
+
+.page--started
+  background-color #4d4588
+
+p
+  margin:0
+  margin-bottom:$gutter
+
+a
+  color:$green
+  text-decoration:none
+
+  &:hover
+    text-decoration:underline
+
+.demo-block
+  background-color:$color
+  color:#fff
+  padding:$gutter
+
+.page--headlines
+  background-image: linear-gradient(top, #282251, $violet 800px)
+
+.highlightedGreen
+  background-color $limegreen
+  border-radius $space
+  padding $space $horizSpace
+
+  h2
+    font-size 200%
+  p
+    font-size 150%
+
+    a
+      font-weight normal
+      color #fff
+
+.started__alternatively
+  text-align right
+
+.started__alternatively__link
+  color $green
