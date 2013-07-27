@@ -1,2 +1,5 @@
-source:       ./www
+safe:         true
+lsi:          false
+pygments:     true
+url:          http://apiblueprint.org
 exclude:      ['*.styl', '*.coffee']
