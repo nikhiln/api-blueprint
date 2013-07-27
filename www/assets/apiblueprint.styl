@@ -1,16 +1,26 @@
 $gutter = 1em
 $color = #f43059
 $green = #7dffad
+$white = #fff
 $darkgreen = #00d779
 $limegreen = #46cc78
 $violet = #4d4588
 $greyviolet = #a19eb6
+$lighterviolet = #aba4df
 $lightviolet = #b4bae9
 $darkviolet = #635e8c
 $darkerviolet = #352f64
+$violetonviolet = #736daa
+$logoviolet = #c1baff
 $transparentC = rgba(0,0,0,0.001)
 $maxWidth = 1200px
 $grey = #aaa
+
+$pink = #d083f0
+$orange = #e39f55
+$salmon = #d8476d
+$sky = #6fc6e2
+$violetblue = #6d6bde
 
 $horizSpace = 2em
 $space = 1em
@@ -27,11 +37,12 @@ html
 .started__stack
 .page__title
   font-family 'TitilliumText', Helvetica, Arial, sans-serif
-  font-weight 100
+  font-weight 200
 
 .page__title
   font-size 300%
   padding-bottom $space
+  margin-bottom 0
   line-height 100%
   border-left 0 solid #fff
   transition 0.2s linear border-left-width, padding-left
@@ -42,6 +53,8 @@ html
   max-width: $maxWidth
 
 .page
+  position relative
+  z-index 2
   padding-top: $gutter
   padding-left: 1em
   padding-right: 1em
@@ -51,12 +64,18 @@ html
     max-width: $maxWidth
 
 .logo__text--highlight
-  color: $green
+  color: $white
 
 .logo__text
-  padding-top 3 * $gutter
-  padding-bottom 3 * $gutter
-  color rgba(255, 255, 255, 1)
+  margin-bottom 0
+  color $logoviolet
+  transition all 0.5s linear
+
+.logo__bg
+  display inline-block
+  padding-top 1 * $gutter
+  padding-bottom 1 * $gutter
+  margin 0 0.5em
   padding-left 90px
   background url('logo_apiblueprint.png') no-repeat left center
 
@@ -72,9 +91,12 @@ html
 
 .logo_animation
   // placeholder
-  height: 300px
-  background-color: rgba(0, 0, 0, 0.3)
+  position relative
+  height: 280px
   width: 100%
+  margin-top $space
+  transition all 0.5s linear
+  transform scale(1)
 
 .logo__brandtext
   font-size: 2em
@@ -89,24 +111,51 @@ html
   display inline-block
   padding-right 1em
   background-color $transparentC
+  padding-bottom 0.5em
+  line-height 100%
+  @media screen and (max-width:660px)
+    display block
 
   &:hover
     color #fff
 
   &::before
-    content '•'
-    padding-right 0.5em
-    font-size 133%
+    content ' '
+    height 0.5em
+    width 0.5em
+    line-height 100%
+    font-size 100%
+    margin-top 0.25em
+    border-radius 100%
+    vertical-align text-top
+    display inline-block
+    margin-right 0.5em
 
-  for ind in 0 1 2 3 4 5
-    &:nth-of-type(6n+{ind})::before
-      color rgb(hsl((180 + 60 * ind)deg, 70%, 70%))
+.brand--api::before
+  color #fff
+  background-color #FFF
+.brand--md::before
+  color $pink
+  background-color $pink
+.brand--life::before
+  color $orange
+  background-color $orange
+.brand--tools::before
+  color $salmon
+  background-color $salmon
+.brand--human::before
+  color $sky
+  background-color $sky
+.brand--comps::before
+  color $violetblue
+  background-color $violetblue
 
 h1
-  font-size 5em
+  font-size 3.5em
   @media screen and (max-width:480px)
-    font-size 4em
+    font-size 3.5em
   margin 0
+  padding 0
   line-height 100%
   font-weight 100
   transition all 0.2s linear
@@ -147,14 +196,19 @@ h1
       left: 0
       color: #827dba
       content: "0" counter(linenumber)
-  .hello--color--method
-    color: #ada6ff
-  .hello--color--uri
-    color: #ffc98f
-  .hello--color--keyword
-    color: #fff
-  .hello--color--preformatted
-    color: #b6afff
+
+.hello--color--method
+  color: #ada6ff
+.hello--color--uri
+  color: #ffc98f
+.hello--color--keyword
+  color: #fff
+.hello--color--preformatted
+  color: #b6afff
+.hello--color--value
+  color: $green
+.hello--color--key
+  color: $lighterviolet
 
 .links
   font-size: 2em
@@ -167,20 +221,31 @@ h1
     text-align: center
     display: inline-block
     box-sizing: border-box
+    font-weight bold
     width: 45%
+    text-decoration none
+    &:hover
+      text-decoration underline
 
   .link--getStarted
     color: #fff
     background-color: $darkgreen
     margin: 0 1.5% 0 3.5%
+    &:hover
+      background-color darken(@background-color, 30%)
+      box-shadow inset 0 0 10px lighten($darkgreen, 10%)
+
   .link--documentation
     color: #fff
-    background-color: #736daa
+    background-color: $violetonviolet
     margin: 0 3.5% 0 1.5%
+    &:hover
+      background-color darken(@background-color, 30%)
+      box-shadow inset 0 0 10px lighten($violetonviolet, 10%)
 
   @media screen and (max-width:660px)
     position: relative
-    font-size: 1.5em
+    font-size: 2em
     top: 0
     margin-top: 0
     width: 100%
@@ -249,8 +314,13 @@ h1
   display: inline-block
   background-color: $transparentC
   box-sizing: border-box
-  border-left: 2em solid $transparentC
-  border-right: 2em solid $transparentC
+  border-left: 1em solid $transparentC
+  border-right: 1em solid $transparentC
+  
+  .versus__about
+    box-sizing: border-box
+    border-left: 2em solid $transparentC
+    border-right: 2em solid $transparentC
 
 @media screen and (max-width:660px)
   /* three items */
@@ -285,12 +355,24 @@ h1
     width 25%
     background-color rgba(255,255,255,1)
 
+
+.versus
+  font-family 'Proxima Nova', Helvetica, Arial, sans-serif
+  font-size 1.25em
+  @media screen and (max-width:660px)
+    font-size 1.66em
+
 .versus__title
-  font-weight normal
+  font-weight bold
   text-align center
+  color $darkviolet
+
+  .versus__whatever
+    color $violet
 
 .versus__word
   color: $grey
+  font-weight normal
   @media screen and (min-width:661px) and (max-width:860px)
     display block
     width 100%
@@ -317,7 +399,7 @@ h1
   padding-bottom $space
 
 .page--started
-  background-color #4d4588
+  background-color $violet
 
 p
   margin:0
@@ -325,9 +407,10 @@ p
 
 a
   color:$green
-  text-decoration:none
+  text-decoration:underline
 
   &:hover
+    color: $white
     text-decoration:underline
 
 .demo-block
@@ -339,21 +422,659 @@ a
   background-image: linear-gradient(top, #282251, $violet 800px)
 
 .highlightedGreen
+  margin-top (2*$space)
   background-color $limegreen
   border-radius $space
-  padding $space $horizSpace
+  padding (3*$space)
+  margin-bottom $space
 
   h2
-    font-size 200%
+    margin 0
+    padding 0 0 0.3em 0
+    font-size 230%
+    font-weight normal
   p
-    font-size 150%
+    padding 0
+    margin 0
+    font-size 180%
+    font-weight normal
 
     a
       font-weight normal
       color #fff
+  & + .subnotes
+    font-size 1.4em
+    @media screen and (max-width:660px)
+      text-align center
+      font-size 1.7em
 
-.started__alternatively
+.highlightedGreen__bg
+  float left
+  height 80px
+  width 60px
+  margin-right (2*$space)
+  background url('sprite.png') -570px -120px no-repeat
+
+.subnotes
+  line-height 1.3
+  color $lighterviolet
+
+.subnotes--right
   text-align right
 
 .started__alternatively__link
   color $green
+
+.anim__item
+  position absolute
+  left 50%
+  top 50%
+  margin-top 38px
+  height 0
+  min-width 0
+  overflow visible
+  line-height 1px
+  font-size 1px
+  transform-origin left center
+
+  .anim--circle
+    border-radius 50%
+    background-repeat no-repeat
+    background-image url('anim-icons.png')
+    position absolute
+    top 0
+    left 0
+    transition all 0.2s linear
+    transform translateZ(0px)
+
+  &:hover
+    .anim--circle
+      transform translateZ(0px) scale(1.2)
+
+
+
+.anim__dots__all
+  display block
+  position absolute
+  transform-origin left center
+  top 0
+  left 0
+  height 0
+
+.anim--dot
+  display inline-block
+  width 4px
+  height 4px
+  line-height 1px
+  margin-top -2px
+  margin-left 7px
+  border-radius 100%
+  background-color #fff
+  opacity 0.5
+
+
+@keyframes scaler {
+  20% {
+    transform scale(1.5)
+    opacity 1.0
+  }
+  40% {
+    transform scale(1)
+    opacity 0.5
+  }
+}
+
+@keyframes scaler2 {
+  20% {
+    transform scale(1)
+    opacity 0.5
+  }
+  40% {
+    transform scale(1.7)
+    opacity 1.0
+  }
+  60% {
+    transform scale(1)
+    opacity 0.5
+  }
+}
+
+@keyframes scaler3 {
+  40% {
+    transform scale(1)
+    opacity 0.5
+  }
+  60% {
+    transform scale(2)
+    opacity 1.0
+  }
+  80% {
+    transform scale(1)
+    opacity 0.5
+  }
+}
+
+@keyframes scaler4 {
+  60% {
+    transform scale(1)
+    opacity 0.5
+  }
+  80% {
+    transform scale(1.7)
+    opacity 1.0
+  }
+  100% {
+    transform scale(1)
+    opacity 0.5
+  }
+}
+
+$i = 4
+for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
+  $i += 1
+  .anim--dot:nth-of-type(16n+{$i})
+    animation-delay $dur
+
+.ab_testing__v_logo + .ab_testing__v_a
+  display none !important
+
+.anim--dot
+  animation-name scaler
+  animation-duration 8s
+  animation-iteration-count infinite
+
+.anim--life
+  .anim__dots__all
+    transform rotate(-10deg)
+    .anim--dot
+      animation-name scaler2
+
+  .anim--circle
+    height 36px
+    width 36px
+    top -58px
+    left 307px
+    margin-top -18px
+    background-color $orange
+    background-position -113px -32px
+
+.anim--tools
+  .anim__dots__all
+    transform rotate(200deg)
+    .anim--dot
+      animation-name scaler3
+  .anim--circle
+    left -363px
+    top -121px
+    margin-top -25px
+    height 50px
+    width 50px
+    background-color $salmon
+    background-position 13px 12px
+
+.anim--md
+  .anim__dots__all
+    transform rotate(25deg)
+    .anim--dot
+      animation-duration 8s
+      animation-name scaler4
+       animation-direction alternate
+  .anim--circle
+    left 133px
+    top 66px
+    margin-top -15px
+    height 30px
+    width 30px
+    background-color #b36cd0
+    background-position -73px 7px
+
+.anim--human
+  .anim__dots__all
+    transform rotate(150deg)
+    .anim--dot
+      animation-name scaler
+  .anim--circle
+    left -160px
+    top 72px
+    margin-top -27px
+    height 54px
+    width 54px
+    background-color $sky
+    background-position -27px -23px
+
+.anim--comps
+  .anim__dots__all
+    transform rotate(280deg)
+    .anim--dot
+      animation-name scaler4
+  .anim--circle
+    left -9px
+    top -143px
+    margin-top -33px
+    height 64px
+    width 64px
+    background-color $violetblue
+    background-position -143px 18px
+
+.anim--api
+  .anim--circle
+    margin-top -40px
+    margin-left -40px
+    font-size 40px
+    line-height 80px
+    text-align center
+    height 80px
+    width 80px
+    background-color #fff
+    color #000
+
+  &:hover
+    .anim--circle
+      transform scale(1.2)
+
+.logo__buttons
+  position absolute
+  top 0
+  left 0
+  right 0
+  height 0
+  overflow visible
+  z-index 3
+  background-color $transparentC 
+
+@media screen and (max-width:860px)
+  .logo_animation
+    transform scale(0.7)
+
+  .logo__buttons
+    .logo__buttons--in
+      text-align center
+      height 30px
+      & > p
+        margin-top 14em
+        float none
+  .logo__text
+    text-align center
+    margin-bottom 7em  
+
+@media screen and (max-width:480px)
+  .logo__buttons
+    .logo__buttons--in
+      & > p
+        top 14em
+
+  .logo_animation
+    height 510px
+    margin-top 2em
+    transform scale(0.7) rotate(90deg)
+
+  .logo
+    .anim--circle
+      transform rotate(-90deg) scale(1.3)
+      
+      &:hover
+        transform rotate(-90deg) scale(1.6)
+
+.logo__buttons--in
+  position relative
+  max-width $maxWidth
+  margin 0 auto
+  height 0
+  overflow visible
+  text-align right
+  background-color $transparentC
+
+  & > p
+    margin-top 6em
+    float right
+    padding-right 3em
+    padding-left 3em
+
+.versus__item
+  padding-top $space
+  .versus__bg
+    display block
+    height 100px
+    width 100px
+    margin $space auto $space
+    background-image url('sprite.png')
+    background-repeat no-repeat
+
+.versus--diy
+  background-position 5px 0
+.versus--swagger
+  background-position -316px 0
+.versus--google
+  background-position -660px 0
+.versus--changelog
+  background-position -660px 0
+
+// started section
+.started__texts
+  color $lighterviolet
+  font-size 1.5em
+
+.started
+  .page__title
+    color $white
+    padding-bottom 0.2em
+
+  .subnotes
+    line-height 1.3
+    color $lighterviolet
+
+  h3
+    font-weight normal
+    margin 0
+    padding 1.5em 0 0.2em 0
+    font-size 1.5em
+
+  pre
+    border-radius 15px
+    background-color $darkerviolet
+    color $greyviolet
+    padding $space
+    margin 0.5em 0 1em
+    overflow scroll
+
+  code
+    display block
+
+  pre
+  code
+    font-family 'Source Code Pro', monospace
+
+  pre + .subnotes
+    margin-top -0.5em
+    margin-bottom 0
+    padding-left 0.5em
+    opacity 0.7
+    
+    &:hover
+      opacity 1
+
+.started__texts--subheading
+  font-family 'TitilliumText', Helvetica, Arial, sans-serif
+  font-weight 200
+  margin-bottom 0
+  font-size 1.25em
+
+.text--italics
+  font-style italic
+
+.bindings
+  padding-bottom (3*$space)
+
+.binding__list
+  padding 0
+  margin 0 0 0 -3em
+  list-style-type none
+  display block
+
+.binding__item
+  position relative
+  box-sizing border-box
+  display inline-block
+  line-height 140px
+  min-height 130px
+  text-align center
+  font-size 3em
+  width 33.3333%
+  border-left 1em solid $transparentC
+  vertical-align top
+
+  &.binding__item--link
+    line-height 40px
+    font-size 1.4em
+    border-left-width 2em
+    padding 7px 1em 0
+
+.binding__item--link--border
+  position absolute
+  top 0
+  left 0
+  width 100%
+  height 100%
+  box-sizing border-box
+  border 2px solid rgba(#fff, 0.2)
+  border-radius 20px
+
+.button__link
+  color: #fff
+  position relative
+  background-color $darkgreen
+  border-radius 20em
+  padding: 0.5em 1.5em
+  font-weight bold
+  text-align: center
+  display: inline-block
+  margin 5px 0 0 0
+  box-sizing: border-box
+  text-decoration none
+  
+  &:hover
+    text-decoration underline
+
+.binding__item:first-child:nth-last-child(2)
+.binding__item:first-child:nth-last-child(2) ~ .binding__item
+  width 50%
+
+.binding__item:first-child:nth-last-child(3)
+.binding__item:first-child:nth-last-child(3) ~ .binding__item
+  width 33.3333%
+
+.binding__item:first-child:nth-last-child(4)
+.binding__item:first-child:nth-last-child(4) ~ .binding__item
+  width 25%
+
+@media screen and (max-width:660px)
+  .bindings .binding__list .binding__item
+  .bindings .binding__list .binding__item + .binding__item
+    width auto
+    margin-bottom 0.5em
+    display block
+
+.binding__link
+  position absolute
+  top 0
+  left 0
+  right 0
+  height 100%
+  border-radius 15px
+  box-shadow inset 0 0 60px lighten(rgba(#3c3662, 60%), 50%)
+  background-color $transparentC 
+  text-decoration none
+  color $white
+
+.binding__bg
+  background-image url('sprite.png')
+  background-repeat no-repeat
+  position relative
+
+  &.binding--nodejs
+    top 33px
+    width 140px
+    margin 0 auto
+    height 60px
+    display block
+    background-position -196px -124px
+
+
+.tooling__list
+  display table
+  width 100%
+  margin $space 0
+  border-radius 15px
+  overflow hidden
+  border 1px solid $violetonviolet
+  border-collapse collapse
+  background-color #655da3
+  font-size 1.5em
+  position relative
+  padding 0
+
+.tooling__item
+  position relative
+  display table-row
+
+.tooling__ico
+.tooling__title
+.tooling__text
+  display table-cell
+  border 1px solid $violetonviolet
+  padding 2em
+  margin 0
+  font-size 100%
+  min-height 120px
+  position relative
+  font-weight normal
+.tooling__ico
+  padding-top 1.75em
+  padding-bottom 1.2em
+  padding-left 0
+  padding-right 0
+  width 130px
+  vertical-align middle
+  text-align center
+.tooling__title
+  width 260px
+
+@media screen and (max-width:660px)
+  .tooling__list
+    display block
+    font-size 1.75em
+  .tooling__ico
+  .tooling__title
+  .tooling__text
+    width 100%
+    border-color $transparentC
+    box-sizing border-box
+    display block
+    padding 0.5em
+    min-height 0
+  .tooling__text
+    padding-bottom 1.2em
+  .tooling__title
+    padding-top 1.2em
+  .tooling__ico
+    position absolute
+    left 0
+    top 1em
+    width 100px
+  .tooling__item
+    display block
+    padding-left 100px
+    border-bottom 1px solid lighten(#7b64b3, 10%)
+    &:last-of-type
+      border-bottom 0 none
+
+.tooling__link
+  position absolute
+  left 0
+  top 0
+  width 100%
+  height 100%
+  background-color $transparentC
+  vertical-align top
+
+.tooling__ico__logo
+  background-image url('sprite.png')
+  background-repeat no-repeat
+  display inline-block
+
+.tooling__ico__logo--apiary
+  background-position -693px -140px
+  height 60px
+  width 65px
+
+.tooling__ico--construction
+  background-position -795px -135px
+  height 62px
+  width 65px
+
+.fork__link
+  box-sizing border-box
+  overflow hidden
+  z-index 10
+  position fixed
+  right 0
+  top 20px
+  width 123px
+  margin-right -63px
+  padding-left 68px
+  display block
+  height 64px
+  white-space pre-line
+  padding-top 8px
+  text-decoration none !important
+  font-weight bold
+  line-height 16px
+  font-size 14px
+  background url('gh-fork.png') 0 0 no-repeat
+  transition all 0.3s linear
+  
+  &:hover
+    margin-right 0
+
+.page--footer
+  background-color #302d43
+  font-size 1.5em
+  padding-top 3em
+  padding-bottom 3em
+
+.colors--lighter
+  color $white
+.colors--logo
+  color $logoviolet
+
+.footer
+  color $violetonviolet
+  a
+    color #fff
+    text-decoration none
+    &:hover
+      text-decoration underline
+
+.footer--leftSide
+  float left
+
+.footer--rightSide
+  float right
+
+  a
+    display inline-block
+    margin-left 1em
+
+.footer--leftSide
+.footer--rightSide
+  margin 0
+  padding 0.5em 0
+  @media screen and (max-width:660px)
+    float none
+    text-align center
+
+.footer--spacer
+  padding-left 1em
+  padding-right 1em
+  color $transparentC
+
+// undefined helper classes
+
+.visuallyhidden
+  border 0
+  clip rect(0 0 0 0)
+  height 1px
+  margin -1px
+  overflow hidden
+  padding 0
+  position absolute
+  width 1px
+
+.clearfix
+  clearfix()
+.block
+  display block
+.smaller
+  font-size 85%
+.larger
+  font-size 125%

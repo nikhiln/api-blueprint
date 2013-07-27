@@ -1,2 +1,2 @@
 source:       ./www
-exclude:      ['www', '*.styl', 'src', '*.scss', '*.psd']
+exclude:      ['www', '*.styl', 'src', '*.scss', '*.psd', '*.coffee']
