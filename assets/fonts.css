@@ -3,8 +3,8 @@
  */
 @font-face {
   font-family: 'Proxima Nova';
-  src: url(/assets/fonts/proxima-nova/2683CC_1D_0.eot);
-  src: url(/assets/fonts/proxima-nova/2683CC_1D_0.eot?#iefix) format("embedded-opentype"), url(/assets/fonts/proxima-nova/2683CC_1D_0.ttf) format("truetype");
+  src: url('./fonts/proxima-nova/2683CC_1D_0.eot');
+  src: url('./fonts/proxima-nova/2683CC_1D_0.eot?#iefix') format("embedded-opentype"), url('./fonts/proxima-nova/2683CC_1D_0.ttf') format("truetype");
   font-style: normal;
   font-weight: 100;
 }
@@ -14,8 +14,8 @@
  */
 @font-face {
   font-family: 'Proxima Nova';
-  src: url(/assets/fonts/proxima-nova/2683CC_21_0.eot);
-  src: url(/assets/fonts/proxima-nova/2683CC_21_0.eot?#iefix) format("embedded-opentype"), url(/assets/fonts/proxima-nova/2683CC_21_0.ttf) format("truetype");
+  src: url('./fonts/proxima-nova/2683CC_21_0.eot');
+  src: url('./fonts/proxima-nova/2683CC_21_0.eot?#iefix') format("embedded-opentype"), url('./fonts/proxima-nova/2683CC_21_0.ttf') format("truetype");
   font-style: normal;
   font-weight: 200;
 }
@@ -25,8 +25,8 @@
  */
 @font-face {
   font-family: 'Proxima Nova';
-  src: url(/assets/fonts/proxima-nova/2683CC_20_0.eot);
-  src: url(/assets/fonts/proxima-nova/2683CC_20_0.eot?#iefix) format("embedded-opentype"), url(/assets/fonts/proxima-nova/2683CC_20_0.ttf) format("truetype");
+  src: url('./fonts/proxima-nova/2683CC_20_0.eot');
+  src: url('./fonts/proxima-nova/2683CC_20_0.eot?#iefix') format("embedded-opentype"), url('./fonts/proxima-nova/2683CC_20_0.ttf') format("truetype");
   font-style: italic;
   font-weight: 200;
 }
@@ -36,8 +36,8 @@
  */
 @font-face {
   font-family: 'Proxima Nova';
-  src: url(/assets/fonts/proxima-nova/2683CC_28_0.eot);
-  src: url(/assets/fonts/proxima-nova/2683CC_28_0.eot?#iefix) format("embedded-opentype"), url(/assets/fonts/proxima-nova/2683CC_28_0.ttf) format("truetype");
+  src: url('./fonts/proxima-nova/2683CC_28_0.eot');
+  src: url('./fonts/proxima-nova/2683CC_28_0.eot?#iefix') format("embedded-opentype"), url('./fonts/proxima-nova/2683CC_28_0.ttf') format("truetype");
   font-style: normal;
   font-weight: normal;
 }
@@ -47,8 +47,8 @@
  */
 @font-face {
   font-family: 'Proxima Nova';
-  src: url(/assets/fonts/proxima-nova/2683CC_22_0.eot);
-  src: url(/assets/fonts/proxima-nova/2683CC_22_0.eot?#iefix) format("embedded-opentype"), url(/assets/fonts/proxima-nova/2683CC_22_0.ttf) format("truetype");
+  src: url('./fonts/proxima-nova/2683CC_22_0.eot');
+  src: url('./fonts/proxima-nova/2683CC_22_0.eot?#iefix') format("embedded-opentype"), url('./fonts/proxima-nova/2683CC_22_0.ttf') format("truetype");
   font-style: italic;
   font-weight: normal;
 }
@@ -58,8 +58,8 @@
  */
 @font-face {
   font-family: 'Proxima Nova';
-  src: url(/assets/fonts/proxima-nova/2683CC_29_0.eot);
-  src: url(/assets/fonts/proxima-nova/2683CC_29_0.eot?#iefix) format("embedded-opentype"), url(/assets/fonts/proxima-nova/2683CC_29_0.ttf) format("truetype");
+  src: url('./fonts/proxima-nova/2683CC_29_0.eot');
+  src: url('./fonts/proxima-nova/2683CC_29_0.eot?#iefix') format("embedded-opentype"), url('./fonts/proxima-nova/2683CC_29_0.ttf') format("truetype");
   font-style: normal;
   font-weight: bold;
 }
@@ -69,8 +69,8 @@
  */
 @font-face {
   font-family: 'Proxima Nova';
-  src: url(/assets/fonts/proxima-nova/2683CC_27_0.eot);
-  src: url(/assets/fonts/proxima-nova/2683CC_27_0.eot?#iefix) format("embedded-opentype"), url(/assets/fonts/proxima-nova/2683CC_27_0.ttf) format("truetype");
+  src: url('./fonts/proxima-nova/2683CC_27_0.eot');
+  src: url('./fonts/proxima-nova/2683CC_27_0.eot?#iefix') format("embedded-opentype"), url('./fonts/proxima-nova/2683CC_27_0.ttf') format("truetype");
   font-style: italic;
   font-weight: bold;
 }
@@ -80,8 +80,8 @@
  */
 @font-face {
   font-family: 'Source Code Pro';
-  src: url(/assets/fonts/source-code-pro/SourceCodePro-Regular-webfont.eot);
-  src: url(/assets/fonts/source-code-pro/SourceCodePro-Regular-webfont.eot?#iefix) format("embedded-opentype"), url(/assets/fonts/source-code-pro/SourceCodePro-Regular-webfont.ttf) format("truetype");
+  src: url('./fonts/source-code-pro/SourceCodePro-Regular-webfont.eot');
+  src: url('./fonts/source-code-pro/SourceCodePro-Regular-webfont.eot?#iefix') format("embedded-opentype"), url('./fonts/source-code-pro/SourceCodePro-Regular-webfont.ttf') format("truetype");
   font-style: normal;
   font-weight: normal;
 }
@@ -91,8 +91,8 @@
  */
 @font-face {
   font-family: 'TitilliumText';
-  src: url("/assets/fonts/titillium-text/TitilliumText25L-webfont.eot");
-  src: url("/assets/fonts/titillium-text/TitilliumText25L-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/titillium-text/TitilliumText25L-webfont.ttf") format("truetype");
+  src: url("./fonts/titillium-text/TitilliumText25L-webfont.eot");
+  src: url("./fonts/titillium-text/TitilliumText25L-webfont.eot?#iefix") format("embedded-opentype"), url("./fonts/titillium-text/TitilliumText25L-webfont.ttf") format("truetype");
   font-weight: 900;
   font-style: normal;
 }
@@ -102,8 +102,8 @@
  */
 @font-face {
   font-family: 'TitilliumText';
-  src: url("/assets/fonts/titillium-text/TitilliumText25L001-webfont.eot");
-  src: url("/assets/fonts/titillium-text/TitilliumText25L001-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/titillium-text/TitilliumText25L001-webfont.ttf") format("truetype");
+  src: url("./fonts/titillium-text/TitilliumText25L001-webfont.eot");
+  src: url("./fonts/titillium-text/TitilliumText25L001-webfont.eot?#iefix") format("embedded-opentype"), url("./fonts/titillium-text/TitilliumText25L001-webfont.ttf") format("truetype");
   font-weight: 800;
   font-style: normal;
 }
@@ -113,8 +113,8 @@
  */
 @font-face {
   font-family: 'TitilliumText';
-  src: url("/assets/fonts/titillium-text/TitilliumText25L002-webfont.eot");
-  src: url("/assets/fonts/titillium-text/TitilliumText25L002-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/titillium-text/TitilliumText25L002-webfont.ttf") format("truetype");
+  src: url("./fonts/titillium-text/TitilliumText25L002-webfont.eot");
+  src: url("./fonts/titillium-text/TitilliumText25L002-webfont.eot?#iefix") format("embedded-opentype"), url("./fonts/titillium-text/TitilliumText25L002-webfont.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
 }
@@ -124,8 +124,8 @@
  */
 @font-face {
   font-family: 'TitilliumText';
-  src: url("/assets/fonts/titillium-text/TitilliumText25L003-webfont.eot");
-  src: url("/assets/fonts/titillium-text/TitilliumText25L003-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/titillium-text/TitilliumText25L003-webfont.ttf") format("truetype");
+  src: url("./fonts/titillium-text/TitilliumText25L003-webfont.eot");
+  src: url("./fonts/titillium-text/TitilliumText25L003-webfont.eot?#iefix") format("embedded-opentype"), url("./fonts/titillium-text/TitilliumText25L003-webfont.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -135,8 +135,8 @@
  */
 @font-face {
   font-family: 'TitilliumText';
-  src: url("/assets/fonts/titillium-text/TitilliumText25L004-webfont.eot");
-  src: url("/assets/fonts/titillium-text/TitilliumText25L004-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/titillium-text/TitilliumText25L004-webfont.ttf") format("truetype");
+  src: url("./fonts/titillium-text/TitilliumText25L004-webfont.eot");
+  src: url("./fonts/titillium-text/TitilliumText25L004-webfont.eot?#iefix") format("embedded-opentype"), url("./fonts/titillium-text/TitilliumText25L004-webfont.ttf") format("truetype");
   font-weight: 200;
   font-style: normal;
 }
@@ -146,8 +146,8 @@
  */
 @font-face {
   font-family: 'TitilliumText';
-  src: url("/assets/fonts/titillium-text/TitilliumText25L005-webfont.eot");
-  src: url("/assets/fonts/titillium-text/TitilliumText25L005-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/titillium-text/TitilliumText25L005-webfont.ttf") format("truetype");
+  src: url("./fonts/titillium-text/TitilliumText25L005-webfont.eot");
+  src: url("./fonts/titillium-text/TitilliumText25L005-webfont.eot?#iefix") format("embedded-opentype"), url("./fonts/titillium-text/TitilliumText25L005-webfont.ttf") format("truetype");
   font-weight: 100;
   font-style: normal;
 }
