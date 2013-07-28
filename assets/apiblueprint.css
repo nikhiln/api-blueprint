@@ -1,5 +1,6 @@
 html {
   font: 0.75em/1.25 sans-serif;
+  font-family: 'Proxima Nova', Helvetica, Arial, sans-serif;
   background-color: #4d4588;
   color: #fff;
 }
@@ -25,7 +26,7 @@ html {
 .baseWrap {
   margin-left: auto;
   margin-right: auto;
-  max-width: 1200px;
+  max-width: 960px;
 }
 .page {
   position: relative;
@@ -36,7 +37,7 @@ html {
 }
 .page .page__inside {
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 960px;
 }
 .logo__text--highlight {
   color: #fff;
@@ -52,8 +53,8 @@ html {
 }
 .logo__bg {
   display: inline-block;
-  padding-top: 1em;
-  padding-bottom: 1em;
+  padding-top: 90px;
+  padding-bottom: 90px;
   margin: 0 0.5em;
   padding-left: 90px;
   background: url("logo_apiblueprint.png") no-repeat left center;
@@ -61,14 +62,19 @@ html {
 .logo__spot {
   padding-top: 1em;
   font-weight: 100;
-  font-size: 3em;
+  font-size: 40px;
   font-family: 'Proxima Nova', Helvetica, Arial, sans-serif;
   text-align: center;
   color: #fff;
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  -ms-transition: all 0.5s linear;
+  transition: all 0.5s linear;
 }
 @media screen and (max-width:760px) {
   .logo__spot {
-    font-size: 2.5em;
+    font-size: 30px;
   }
 }
 .logo_animation {
@@ -97,7 +103,7 @@ html {
   padding-right: 1em;
   margin-left: auto;
   margin-right: auto;
-  max-width: 70%;
+  max-width: 100%;
   margin-bottom: 2em;
   text-align: center;
   -webkit-box-sizing: border-box;
@@ -118,6 +124,10 @@ html {
   background-color: rgba(0,0,0,0.001);
   padding-bottom: 0.5em;
   line-height: 100%;
+/*
+  &:hover
+    color #fff
+  */
 }
 @media screen and (max-width:660px) {
   .logo__brandtext__info {
@@ -125,9 +135,6 @@ html {
     padding-left: 1em;
     text-indent: -1em;
   }
-}
-.logo__brandtext__info:hover {
-  color: #fff;
 }
 .logo__brandtext__info::before {
   content: ' ';
@@ -219,7 +226,7 @@ h1 {
 }
 .hello .hello--linewrap {
   counter-increment: linenumber;
-  padding-left: 2em;
+  padding-left: 3em;
   position: relative;
   white-space: pre;
 }
@@ -255,14 +262,14 @@ h1 {
 .links .link {
   -webkit-border-radius: 20em;
   border-radius: 20em;
-  padding: 0.5em 0;
+  padding: 0.7em 0;
   text-align: center;
   display: inline-block;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   font-weight: bold;
-  width: 45%;
+  width: 44%;
   text-decoration: none;
 }
 .links .link:hover {
@@ -281,7 +288,7 @@ h1 {
 .links .link--documentation {
   color: #fff;
   background-color: #736daa;
-  margin: 0 3.5% 0 1.5%;
+  margin: 0 3.5% 0 3.5%;
 }
 .links .link--documentation:hover {
   background-color: #4d487b;
@@ -309,7 +316,7 @@ h1 {
     position: absolute;
     font-size: 1.5em;
     top: 50%;
-    margin-top: -2.2em;
+    margin-top: -2.5em;
     right: 0.25em;
     width: 12em;
   }
@@ -330,14 +337,15 @@ h1 {
   .links {
     position: absolute;
     top: 50%;
-    margin-top: -1.1em;
+    margin-top: -1.3em;
     right: 1em;
-    min-width: 26em;
+    min-width: 20em;
     text-align: right;
     font-size: 1.5em;
   }
   .links .link--documentation {
     margin-right: 0;
+    margin-left: 7%;
   }
 }
 .page--controverse {
@@ -381,6 +389,7 @@ h1 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  line-height: 1.5;
   border-left: 2em solid rgba(0,0,0,0.001);
   border-right: 2em solid rgba(0,0,0,0.001);
 }
@@ -798,13 +807,11 @@ a:hover {
   -o-animation-duration: 8s;
   -ms-animation-duration: 8s;
   animation-duration: 8s;
-}
-.anim--md .anim__dots__all .anim--dot animation-name scaler4 {
-  -webkit-animation-direction: alternate;
-  -moz-animation-direction: alternate;
-  -o-animation-direction: alternate;
-  -ms-animation-direction: alternate;
-  animation-direction: alternate;
+  -webkit-animation-name: scaler3;
+  -moz-animation-name: scaler3;
+  -o-animation-name: scaler3;
+  -ms-animation-name: scaler3;
+  animation-name: scaler3;
 }
 .anim--md .anim--circle {
   left: 133px;
@@ -889,7 +896,7 @@ a:hover {
   z-index: 3;
   background-color: rgba(0,0,0,0.001);
 }
-@media only screen and (min-width:660px) {
+@media only screen and (min-width:761px) {
   .logo_animation .anim--dot {
     -webkit-animation-play-state: running;
     -moz-animation-play-state: running;
@@ -898,7 +905,7 @@ a:hover {
     animation-play-state: running;
   }
 }
-@media screen and (max-width:860px) {
+@media screen and (max-width:760px) {
   .logo_animation {
     -webkit-transform: scale(0.7);
     -moz-transform: scale(0.7);
@@ -906,17 +913,31 @@ a:hover {
     -ms-transform: scale(0.7);
     transform: scale(0.7);
   }
+}
+@media screen and (max-width:660px) {
+  .logo_animation {
+    -webkit-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+    -o-transform: scale(0.6);
+    -ms-transform: scale(0.6);
+    transform: scale(0.6);
+  }
+  .logo__spot {
+    padding-top: 0;
+  }
+}
+@media screen and (max-width:860px) {
   .logo__buttons .logo__buttons--in {
     text-align: center;
     height: 30px;
   }
   .logo__buttons .logo__buttons--in > p {
-    margin-top: 11em;
+    margin-top: 18em;
     float: none;
   }
   .logo__text {
     text-align: center;
-    margin-bottom: 9em;
+    margin-bottom: 10em;
   }
 }
 @media screen and (max-width:480px) {
@@ -924,36 +945,43 @@ a:hover {
     visibility: hidden;
     display: none;
   }
+  .logo__bg {
+    padding-top: 65px;
+    padding-bottom: 65px;
+  }
   .logo__buttons .logo__buttons--in > p {
-    margin-top: 11em;
+    margin-top: 15em;
   }
   .logo_animation {
-    height: 360px;
-    margin-top: 2em;
-    -webkit-transform: scale(0.5) rotate(90deg);
-    -moz-transform: scale(0.5) rotate(90deg);
-    -o-transform: scale(0.5) rotate(90deg);
-    -ms-transform: scale(0.5) rotate(90deg);
-    transform: scale(0.5) rotate(90deg);
+    height: 150px;
+    margin-top: 0;
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -o-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  .logo_animation .anim__item {
+    margin-top: 0;
   }
   .logo .anim__item .anim--circle {
-    -webkit-transform: rotate(-90deg) scale(1.7);
-    -moz-transform: rotate(-90deg) scale(1.7);
-    -o-transform: rotate(-90deg) scale(1.7);
-    -ms-transform: rotate(-90deg) scale(1.7);
-    transform: rotate(-90deg) scale(1.7);
+    -webkit-transform: scale(1.7);
+    -moz-transform: scale(1.7);
+    -o-transform: scale(1.7);
+    -ms-transform: scale(1.7);
+    transform: scale(1.7);
   }
   .logo .anim__item .anim--circle:hover {
-    -webkit-transform: rotate(-90deg) scale(2);
-    -moz-transform: rotate(-90deg) scale(2);
-    -o-transform: rotate(-90deg) scale(2);
-    -ms-transform: rotate(-90deg) scale(2);
-    transform: rotate(-90deg) scale(2);
+    -webkit-transform: scale(2);
+    -moz-transform: scale(2);
+    -o-transform: scale(2);
+    -ms-transform: scale(2);
+    transform: scale(2);
   }
 }
 .logo__buttons--in {
   position: relative;
-  max-width: 1200px;
+  max-width: 960px;
   margin: 0 auto;
   height: 0;
   overflow: visible;
@@ -961,7 +989,7 @@ a:hover {
   background-color: rgba(0,0,0,0.001);
 }
 .logo__buttons--in > p {
-  margin-top: 6em;
+  margin-top: 120px;
   float: right;
   padding-right: 3em;
   padding-left: 3em;
@@ -991,7 +1019,10 @@ a:hover {
 }
 .started__texts {
   color: #aba4df;
-  font-size: 1.5em;
+  font-size: 1.4em;
+}
+.started {
+  font-family: 'Proxima Nova', Helvetica, Arial, sans-serif;
 }
 .started .page__title {
   color: #fff;
@@ -1002,10 +1033,11 @@ a:hover {
   color: #aba4df;
 }
 .started h3 {
+  font-family: 'Proxima Nova', Helvetica, Arial, sans-serif;
   font-weight: normal;
   margin: 0;
-  padding: 1.5em 0 0.2em 0;
-  font-size: 1.5em;
+  padding: 1.5em 0 0.1em 0;
+  font-size: 1.2em;
 }
 .started pre {
   -webkit-border-radius: 15px;
@@ -1013,7 +1045,7 @@ a:hover {
   background-color: #352f64;
   color: #a19eb6;
   padding: 1em;
-  margin: 0.5em 0 1em;
+  margin: 0.25em 0 1em;
   overflow: auto;
 }
 .started code {
@@ -1046,6 +1078,7 @@ a:hover {
   font-style: italic;
 }
 .bindings {
+  font-family: 'Proxima Nova', Helvetica, Arial, sans-serif;
   padding-bottom: 3em;
 }
 .binding__list {
@@ -1162,9 +1195,10 @@ a:hover {
   background-position: -196px -124px;
 }
 .tooling__list {
+  font-family: 'Proxima Nova', Helvetica, Arial, sans-serif;
   display: table;
   width: 100%;
-  margin: 1em 0;
+  margin: 0 0 1em 0;
   -webkit-border-radius: 15px;
   border-radius: 15px;
   overflow: hidden;
@@ -1297,7 +1331,7 @@ a:hover {
 }
 .page--footer {
   background-color: #302d43;
-  font-size: 1.5em;
+  font-size: 1.3em;
   padding-top: 3em;
   padding-bottom: 3em;
 }
@@ -1308,7 +1342,8 @@ a:hover {
   color: #c1baff;
 }
 .footer {
-  color: #736daa;
+  font-family: 'Proxima Nova', Helvetica, Arial, sans-serif;
+  color: #a19eb6;
 }
 .footer a {
   color: #fff;
@@ -1374,13 +1409,19 @@ a:hover {
 .larger {
   font-size: 125%;
 }
+.nowrap {
+  white-space: nowrap;
+}
+.pre {
+  white-space: pre;
+}
 @-moz-keyframes scaler {
   20% {
-    -webkit-transform: scale(1.5);
-    -moz-transform: scale(1.5);
-    -o-transform: scale(1.5);
-    -ms-transform: scale(1.5);
-    transform: scale(1.5);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
     opacity: 1;
     -ms-filter: none;
     filter: none;
@@ -1399,11 +1440,11 @@ a:hover {
 }
 @-webkit-keyframes scaler {
   20% {
-    -webkit-transform: scale(1.5);
-    -moz-transform: scale(1.5);
-    -o-transform: scale(1.5);
-    -ms-transform: scale(1.5);
-    transform: scale(1.5);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
     opacity: 1;
     -ms-filter: none;
     filter: none;
@@ -1422,11 +1463,11 @@ a:hover {
 }
 @-o-keyframes scaler {
   20% {
-    -webkit-transform: scale(1.5);
-    -moz-transform: scale(1.5);
-    -o-transform: scale(1.5);
-    -ms-transform: scale(1.5);
-    transform: scale(1.5);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
     opacity: 1;
     -ms-filter: none;
     filter: none;
@@ -1445,11 +1486,11 @@ a:hover {
 }
 @-ms-keyframes scaler {
   20% {
-    -webkit-transform: scale(1.5);
-    -moz-transform: scale(1.5);
-    -o-transform: scale(1.5);
-    -ms-transform: scale(1.5);
-    transform: scale(1.5);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
     opacity: 1;
     -ms-filter: none;
     filter: none;
@@ -1468,11 +1509,11 @@ a:hover {
 }
 @keyframes scaler {
   20% {
-    -webkit-transform: scale(1.5);
-    -moz-transform: scale(1.5);
-    -o-transform: scale(1.5);
-    -ms-transform: scale(1.5);
-    transform: scale(1.5);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
     opacity: 1;
     -ms-filter: none;
     filter: none;
@@ -1502,11 +1543,11 @@ a:hover {
   }
 
   40% {
-    -webkit-transform: scale(1.7);
-    -moz-transform: scale(1.7);
-    -o-transform: scale(1.7);
-    -ms-transform: scale(1.7);
-    transform: scale(1.7);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
     opacity: 1;
     -ms-filter: none;
     filter: none;
@@ -1536,11 +1577,11 @@ a:hover {
   }
 
   40% {
-    -webkit-transform: scale(1.7);
-    -moz-transform: scale(1.7);
-    -o-transform: scale(1.7);
-    -ms-transform: scale(1.7);
-    transform: scale(1.7);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
     opacity: 1;
     -ms-filter: none;
     filter: none;
@@ -1570,11 +1611,11 @@ a:hover {
   }
 
   40% {
-    -webkit-transform: scale(1.7);
-    -moz-transform: scale(1.7);
-    -o-transform: scale(1.7);
-    -ms-transform: scale(1.7);
-    transform: scale(1.7);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
     opacity: 1;
     -ms-filter: none;
     filter: none;
@@ -1604,11 +1645,11 @@ a:hover {
   }
 
   40% {
-    -webkit-transform: scale(1.7);
-    -moz-transform: scale(1.7);
-    -o-transform: scale(1.7);
-    -ms-transform: scale(1.7);
-    transform: scale(1.7);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
     opacity: 1;
     -ms-filter: none;
     filter: none;
@@ -1638,11 +1679,11 @@ a:hover {
   }
 
   40% {
-    -webkit-transform: scale(1.7);
-    -moz-transform: scale(1.7);
-    -o-transform: scale(1.7);
-    -ms-transform: scale(1.7);
-    transform: scale(1.7);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
     opacity: 1;
     -ms-filter: none;
     filter: none;
@@ -1672,11 +1713,11 @@ a:hover {
   }
 
   60% {
-    -webkit-transform: scale(2);
-    -moz-transform: scale(2);
-    -o-transform: scale(2);
-    -ms-transform: scale(2);
-    transform: scale(2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
     opacity: 1;
     -ms-filter: none;
     filter: none;
@@ -1706,11 +1747,11 @@ a:hover {
   }
 
   60% {
-    -webkit-transform: scale(2);
-    -moz-transform: scale(2);
-    -o-transform: scale(2);
-    -ms-transform: scale(2);
-    transform: scale(2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
     opacity: 1;
     -ms-filter: none;
     filter: none;
@@ -1740,11 +1781,11 @@ a:hover {
   }
 
   60% {
-    -webkit-transform: scale(2);
-    -moz-transform: scale(2);
-    -o-transform: scale(2);
-    -ms-transform: scale(2);
-    transform: scale(2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
     opacity: 1;
     -ms-filter: none;
     filter: none;
@@ -1774,11 +1815,11 @@ a:hover {
   }
 
   60% {
-    -webkit-transform: scale(2);
-    -moz-transform: scale(2);
-    -o-transform: scale(2);
-    -ms-transform: scale(2);
-    transform: scale(2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
     opacity: 1;
     -ms-filter: none;
     filter: none;
@@ -1808,11 +1849,11 @@ a:hover {
   }
 
   60% {
-    -webkit-transform: scale(2);
-    -moz-transform: scale(2);
-    -o-transform: scale(2);
-    -ms-transform: scale(2);
-    transform: scale(2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
     opacity: 1;
     -ms-filter: none;
     filter: none;
@@ -1842,11 +1883,11 @@ a:hover {
   }
 
   80% {
-    -webkit-transform: scale(1.7);
-    -moz-transform: scale(1.7);
-    -o-transform: scale(1.7);
-    -ms-transform: scale(1.7);
-    transform: scale(1.7);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
     opacity: 1;
     -ms-filter: none;
     filter: none;
@@ -1876,11 +1917,11 @@ a:hover {
   }
 
   80% {
-    -webkit-transform: scale(1.7);
-    -moz-transform: scale(1.7);
-    -o-transform: scale(1.7);
-    -ms-transform: scale(1.7);
-    transform: scale(1.7);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
     opacity: 1;
     -ms-filter: none;
     filter: none;
@@ -1910,11 +1951,11 @@ a:hover {
   }
 
   80% {
-    -webkit-transform: scale(1.7);
-    -moz-transform: scale(1.7);
-    -o-transform: scale(1.7);
-    -ms-transform: scale(1.7);
-    transform: scale(1.7);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
     opacity: 1;
     -ms-filter: none;
     filter: none;
@@ -1944,11 +1985,11 @@ a:hover {
   }
 
   80% {
-    -webkit-transform: scale(1.7);
-    -moz-transform: scale(1.7);
-    -o-transform: scale(1.7);
-    -ms-transform: scale(1.7);
-    transform: scale(1.7);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
     opacity: 1;
     -ms-filter: none;
     filter: none;
@@ -1978,11 +2019,11 @@ a:hover {
   }
 
   80% {
-    -webkit-transform: scale(1.7);
-    -moz-transform: scale(1.7);
-    -o-transform: scale(1.7);
-    -ms-transform: scale(1.7);
-    transform: scale(1.7);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
     opacity: 1;
     -ms-filter: none;
     filter: none;

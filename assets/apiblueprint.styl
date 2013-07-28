@@ -13,7 +13,7 @@ $darkerviolet = #352f64
 $violetonviolet = #736daa
 $logoviolet = #c1baff
 $transparentC = rgba(0,0,0,0.001)
-$maxWidth = 1200px
+$maxWidth = 960px
 $grey = #aaa
 
 $pink = #d083f0
@@ -29,6 +29,7 @@ $space = 1em
 
 html
   font: 0.75em/1.25 sans-serif
+  font-family: 'Proxima Nova', Helvetica, Arial, sans-serif
   background-color: $violet
   color: #fff
 
@@ -73,8 +74,8 @@ html
 
 .logo__bg
   display inline-block
-  padding-top 1 * $gutter
-  padding-bottom 1 * $gutter
+  padding-top 90px
+  padding-bottom 90px
   margin 0 0.5em
   padding-left 90px
   background url('logo_apiblueprint.png') no-repeat left center
@@ -82,12 +83,13 @@ html
 .logo__spot
   padding-top: $space
   font-weight: 100
-  font-size: 3em
+  font-size: 40px
   font-family: 'Proxima Nova', Helvetica, Arial, sans-serif
   text-align: center
   color: rgba(255, 255, 255, 1)
+  transition all 0.5s linear
   @media screen and (max-width:760px)
-    font-size: 2.5em
+    font-size: 30px
 
 .logo_animation
   // placeholder
@@ -108,7 +110,7 @@ html
   padding-right: $space
   margin-left auto
   margin-right auto
-  max-width 70%
+  max-width 100%
   margin-bottom: $horizSpace
   text-align center
   box-sizing border-box
@@ -129,8 +131,10 @@ html
     padding-left 1em
     text-indent -1em
 
+  /*
   &:hover
     color #fff
+  */
 
   &::before
     content ' '
@@ -201,7 +205,7 @@ h1
 
   .hello--linewrap
     counter-increment: linenumber
-    padding-left: 2*$space
+    padding-left: 3*$space
     position: relative
     white-space: pre
     &::before
@@ -230,12 +234,12 @@ h1
 
   .link
     border-radius: 20em
-    padding: 0.5em 0
+    padding: 0.7em 0
     text-align: center
     display: inline-block
     box-sizing: border-box
     font-weight bold
-    width: 45%
+    width: 44%
     text-decoration none
     &:hover
       text-decoration underline
@@ -251,7 +255,7 @@ h1
   .link--documentation
     color: #fff
     background-color: $violetonviolet
-    margin: 0 3.5% 0 1.5%
+    margin: 0 3.5% 0 3.5%
     &:hover
       background-color darken(@background-color, 30%)
       box-shadow inset 0 0 10px lighten($violetonviolet, 10%)
@@ -274,7 +278,7 @@ h1
     position: absolute
     font-size: 1.5em
     top: 50%
-    margin-top: -2.2em
+    margin-top: -2.5em
     right: 0.25em
     width: 12em
 
@@ -289,14 +293,15 @@ h1
   @media screen and (min-width:861px)
     position: absolute
     top: 50%
-    margin-top: -1.1em
+    margin-top: -1.3em
     right: 1em
-    min-width: 26em
+    min-width: 20em
     text-align: right
     font-size: 1.5em
 
     .link--documentation
-      margin-right: 0
+      margin-right 0
+      margin-left 7%
 
 .page--controverse
   color: $darkviolet
@@ -332,6 +337,7 @@ h1
   
   .versus__about
     box-sizing: border-box
+    line-height 1.5 
     border-left: 2em solid $transparentC
     border-right: 2em solid $transparentC
 
@@ -523,7 +529,7 @@ a
 
 @keyframes scaler {
   20% {
-    transform scale(1.5)
+    transform scale(1.2)
     opacity 1.0
   }
   40% {
@@ -538,7 +544,7 @@ a
     opacity 0.5
   }
   40% {
-    transform scale(1.7)
+    transform scale(1.2)
     opacity 1.0
   }
   60% {
@@ -553,7 +559,7 @@ a
     opacity 0.5
   }
   60% {
-    transform scale(2)
+    transform scale(1.2)
     opacity 1.0
   }
   80% {
@@ -568,7 +574,7 @@ a
     opacity 0.5
   }
   80% {
-    transform scale(1.7)
+    transform scale(1.2)
     opacity 1.0
   }
   100% {
@@ -625,8 +631,7 @@ for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
     transform rotate(25deg)
     .anim--dot
       animation-duration 8s
-      animation-name scaler4
-       animation-direction alternate
+      animation-name scaler3
   .anim--circle
     left 133px
     top 66px
@@ -690,47 +695,60 @@ for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
   z-index 3
   background-color $transparentC 
 
-@media only screen and (min-width:660px)
+@media only screen and (min-width:761px)
   .logo_animation
     .anim--dot
       animation-play-state running
 
-@media screen and (max-width:860px)
+@media screen and (max-width:760px)
   .logo_animation
     transform scale(0.7)
 
+@media screen and (max-width:660px)
+  .logo_animation
+    transform scale(0.6)
+  .logo__spot
+    padding-top 0
+
+@media screen and (max-width:860px)
   .logo__buttons
     .logo__buttons--in
       text-align center
       height 30px
       & > p
-        margin-top 11em
+        margin-top 18em
         float none
   .logo__text
     text-align center
-    margin-bottom 9em  
+    margin-bottom 10em
 
 @media screen and (max-width:480px)
   .fork__link
     visibility hidden
     display none
 
+  .logo__bg
+    padding-top 65px
+    padding-bottom 65px 
   .logo__buttons
     .logo__buttons--in
       & > p
-        margin-top 11em
+        margin-top 15em
 
   .logo_animation
-    height 360px
-    margin-top 2em
-    transform scale(0.5) rotate(90deg)
+    height 150px
+    margin-top 0
+    transform scale(0.5)
+    
+    .anim__item
+      margin-top 0
 
   .logo .anim__item
     .anim--circle
-      transform rotate(-90deg) scale(1.7)
+      transform scale(1.7)
       
       &:hover
-        transform rotate(-90deg) scale(2)
+        transform scale(2)
 
 .logo__buttons--in
   position relative
@@ -742,7 +760,7 @@ for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
   background-color $transparentC
 
   & > p
-    margin-top 6em
+    margin-top 120px
     float right
     padding-right 3em
     padding-left 3em
@@ -769,9 +787,11 @@ for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
 // started section
 .started__texts
   color $lighterviolet
-  font-size 1.5em
+  font-size 1.4em
 
 .started
+  font-family 'Proxima Nova', Helvetica, Arial, sans-serif
+
   .page__title
     color $white
     padding-bottom 0.2em
@@ -781,17 +801,18 @@ for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
     color $lighterviolet
 
   h3
+    font-family 'Proxima Nova', Helvetica, Arial, sans-serif
     font-weight normal
     margin 0
-    padding 1.5em 0 0.2em 0
-    font-size 1.5em
+    padding 1.5em 0 0.1em 0
+    font-size 1.2em
 
   pre
     border-radius 15px
     background-color $darkerviolet
     color $greyviolet
     padding $space
-    margin 0.5em 0 1em
+    margin 0.25em 0 1em
     overflow auto
 
   code
@@ -820,6 +841,7 @@ for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
   font-style italic
 
 .bindings
+  font-family 'Proxima Nova', Helvetica, Arial, sans-serif
   padding-bottom (3*$space)
 
 .binding__list
@@ -925,9 +947,10 @@ for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
 
 
 .tooling__list
+  font-family 'Proxima Nova', Helvetica, Arial, sans-serif
   display table
   width 100%
-  margin $space 0
+  margin 0 0 $space 0
   border-radius 15px
   overflow hidden
   border 1px solid $violetonviolet
@@ -1042,7 +1065,7 @@ for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
 
 .page--footer
   background-color #302d43
-  font-size 1.5em
+  font-size 1.3em
   padding-top 3em
   padding-bottom 3em
 
@@ -1052,7 +1075,8 @@ for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
   color $logoviolet
 
 .footer
-  color $violetonviolet
+  font-family 'Proxima Nova', Helvetica, Arial, sans-serif
+  color $greyviolet
   a
     color #fff
     text-decoration none
@@ -1102,3 +1126,7 @@ for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
   font-size 85%
 .larger
   font-size 125%
+.nowrap
+  white-space nowrap
+.pre
+  white-space pre
