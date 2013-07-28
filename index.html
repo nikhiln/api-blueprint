@@ -9,10 +9,8 @@
   <link rel="stylesheet" href="assets/normalize.css">
   <link rel="stylesheet" href="assets/fonts.css">
   <link rel="stylesheet" href="assets/apiblueprint.css">
-  <script>var ab_variant = 'default';</script>
-  <script src="assets/helpers.js"></script>
 </head>
-<body>
+<body class="not-ready">
 
 <div class="page page--headlines">
   <div class="page__inside">
@@ -24,171 +22,19 @@
         </div>
       </div>
 
-      <div class="logo_animation">
-        <span data-dots="13" class="anim__item anim--md"><span class="anim--circle"></span></span>
-        <span data-dots="11" class="anim__item anim--human"><span class="anim--circle"></span></span>
-        <span data-dots="10" class="anim__item anim--comps"><span class="anim--circle"></span></span>
-        <span data-dots="30" class="anim__item anim--tools"><span class="anim--circle"></span></span>
-        <span data-dots="28" class="anim__item anim--life"><span class="anim--circle"></span></span>
-        <span data-dots="0"  class="anim__item anim--api"><span class="anim--circle">API</span></span>
-      </div>
+      <div class="comming__soon"><pre># <span class="hello--color--method">GET</span> <span class="hello--color--uri">/api-blueprint.org</span>
++ <span class="hello--color--keyword">Response 200 (text/json)</span>
 
-      <p class="logo__spot"><script>abTestWrite("ab_testing__v_logo", [["b", "API Documentation with powerful tooling"]], "default")</script><span class="ab_testing__v_a">Connecting the dots in API development</span></p>
-
-      <ul class="logo__brandtext"><!--
-     --><li class="logo__brandtext__info brand--api"><span class="brandtext__in">Web API Language</span></li><!--
-     --><li class="logo__brandtext__info brand--md"><span class="brandtext__in">Pure Markdown</span></li><!--
-     --><li class="logo__brandtext__info brand--human"><span class="brandtext__in">Designed for Humans</span></li><!--
-     --><li class="logo__brandtext__info brand--comps"><span class="brandtext__in">Understandable by Machines</span></li><!--
-     --><li class="logo__brandtext__info brand--tools"><span class="brandtext__in">Powerful Tooling</span></li><!--
-     --><li class="logo__brandtext__info brand--life"><span class="brandtext__in">Easy Lifecycle</span></li>
-      </ul>
+      {
+        <span class="hello--color--key">"available"</span>: <span class="hello--color--value">"soon"</span>
+      }
+</pre></div>
 
     </header>
 
-    <section class="hello baseWrap">
-      <pre><code><span class="hello--linewrap"># <span class="hello--color--method">GET</span> <span class="hello--color--uri">/message</span></span>
-<span class="hello--linewrap">+ <span class="hello--color--keyword">Response 200 (text/plain)</span></span>
-<span class="hello--linewrap">      </span>
-<span class="hello--linewrap">      <span class="hello--color--preformatted">Hello World!</span></span></code></pre>
-
-      <section class="links">
-        <a class="link link--getStarted" href="#get-started">Get Started</a><!--
-       --><a class="link link--documentation" href="https://github.com/apiaryio/api-blueprint">Documentation</a>
-      </section>
-
-    </section>
   </div>
 </div><!-- /.page.headlines -->
 
-<div class="page page--controverse">
-  <div class="versus page__inside">
-    <!-- <h2 class="page__title">Features compared</h2> -->
-    <ul class="versus__block">
-      <li class="versus__item"><span class="versus__bg versus--diy"></span>
-        <h2 class="versus__title">API Blueprint <span class="versus__word">vs.</span> <span class="versus__whatever">DIY</span></h2>
-        <p class="versus__about">Don't waste your time reinventing the wheel. Focus on your API.</p>
-        <p class="versus__about">Using API Blueprint gives you awesome tools for your whole API lifecycle. Use it to discuss your API with others. Generate documentation automatically. Or a test suite. Or even some Rails code.</p>
-      </li><!--
-     --><li class="versus__item"><span class="versus__bg versus--swagger"></span>
-        <h2 class="versus__title">API Blueprint <span class="versus__word">vs.</span> <span class="versus__whatever">Swagger</span></h2>
-        <p class="versus__about">JSON is a machine format. Leave it to machines.</p>
-        <p class="versus__about">Who will edit your documentation next year? Who will proofread it? With API Blueprint everybody can! Your designer and copywriter too.</p>
-      </li><!--
-     --><!-- <li class="versus__item"><span class="versus__bg versus--changelog"></span>
-        <h2 class="versus__title">API Blueprint <span class="versus__word">vs.</span> <span class="versus__whatever">API Changelog</span> </h2>
-        <p class="versus__about">With API Blueprint you do not need API Changelog.</p>
-        <p class="versus__about">API Blueprint has its own life cycle living in the repository with your API.</p>
-      </li> --><!--
-    --><li class="versus__item"><span class="versus__bg versus--google"></span>
-        <h2 class="versus__title">API Blueprint <span class="versus__word">vs.</span> <span class="versus__whatever">Google Docs</span> </h2>
-        <p class="versus__about">Your code is evolving, branching. It is versioned. It is tested. So should your API documentation.</p>
-        <p class="versus__about">API Blueprint lives right there with your code, in your repository. It has the same lifecycle.  Your favorite CI/deployment workflow already works with it.</p>
-    </li>
-    </ul>
-  </div>
-</div><!-- /.page.controverse -->
-
-<div class="page page--examples">
-  <div class="examples page__inside">
-    <h2 class="page__title">Examples</h2>
-    <p>To be delivered...</p>
-  </div>
-</div>
-
-<a name="get-started" id="get-started"></a>
-<section class="page page--started">
-  <div class="started page__inside">
-    <article class="highlightedGreen"><span class="highlightedGreen__bg"></span>
-      <h2 class="started__question">Have a question?</h2>
-      <p class="started__stack">See Stack Overflow <a href="http://stackoverflow.com/tags/apiblueprint">apiblueprint</a> tag.</p>
-    </article>
-    <p class="subnotes subnotes--right">
-      Alternatively, if you are a contributor, check out the <a href="https://github.com/" class="started__alternatively__link">API Blueprint Developers Discussion Group</a>.
-    </p>
-    <article class="started__texts">
-      <h2 class="page__title">Get Started</h2>
-      <p class="started__texts--subheading">Use the reference API Blueprint parser – <a href="https://github.com/apiaryio/snowcrash">Snow Crash</a> or one of its <a href="https://github.com/apiaryio/snowcrash#bindings">bindings</a>.</p>
-      <section>
-        <h3>Get Snow Crash</h3>
-        <pre><code class="pre">$ <strong>brew</strong> install --HEAD https://raw.github.com/apiaryio/snowcrash/master/tools/homebrew/snowcrash.rb</code></pre>
-        <p class="subnotes">
-          Build notes for platforms: <a href="https://github.com/apiaryio/snowcrash#snow-crash-command-line-tool">Linux</a>,
-          <a href="https://github.com/apiaryio/snowcrash/wiki/Building-on-Windows">Windows</a>
-        </p>
-      </section>
-      <section>
-        <h3>Create your first API</h3>
-        <pre><code><span class="pre">$ <strong>echo "# My API\n" | snowcrash --format json</strong></span>
-<span class="pre">{</span>
-<span class="pre">  <strong class="hello--color--key">"name"</strong>: <strong class="hello--color--value">"My API"</strong>,</span>
-<span class="pre">  <strong class="hello--color--key">"description"</strong>: <strong class="hello--color--value">""</strong></span>
-<span class="pre">}</span></code></pre>
-      </section>
-    </article>
-  </div>
-</section>
-
-<section class="page page--bindings">
-  <div class="page__inside bindings">
-    <h2 class="page__title">Bindings</h2>
-    <ul class="binding__list">
-      <li class="binding__item">
-        <a class="binding__link" href="https://github.com/apiaryio/protagonist">
-          <span class="visuallyhidden">Node.JS</span>
-        <span class="binding__bg binding--nodejs"></span></a>
-      </li><!--
-   --><li class="binding__item">
-        <a class="binding__link" href="https://github.com/SeriousM/snowcrashCLR">C<span class="text--italics">#</span> (.NET)</a>
-      </li><!-- 
-   --><li class="binding__item binding__item--link"><span class="binding__item--link--border"></span>
-        Did not find yours?
-        <br>
-        <a href="" class="button__link button__link--green">Contribute</a>
-      </li>
-    </ul>
-    <h2 class="page__title">Tooling</h2>
-    <ul class="tooling__list">
-      <li class="tooling__item">
-        <h3 class="tooling__ico">
-          <span class="tooling__ico__logo tooling__ico__logo--apiary"></span>
-          <a href="http://apiary.io" class="tooling__link">
-            <span class="visuallyhidden">Apiary.io</span>
-          </a>
-        </h3><!-- 
-     --><p class="tooling__title"><span class="block larger">Apiary.io </span><span class="block larger">REST API Platform </span><span class="block smaller">See, write and share APIs</span></p><!-- 
-     --><p class="tooling__text">Apiary supercharges your Blueprints with interactive documentation, API mock, test suites, validations, traffic inspector and collaboration.</p>
-      </li>
-      <li class="tooling__item">
-        <span class="tooling__ico"><span class="tooling__ico__logo tooling__ico--construction"></span></span><!-- 
-     --><h3 class="tooling__title"><span class="larger">HTTP introspection tool</span> <span class="block smaller">In the making</span></h3><!-- 
-     --><p class="tooling__text">Record HTTP communication directly in the API Blueprint format.</p>
-      </li>
-      <li class="tooling__item">
-        <span class="tooling__ico"><span class="tooling__ico__logo tooling__ico--construction"></span></span><!-- 
-     --><h3 class="tooling__title"><span class="larger">API testing framework</span> <span class="block smaller">In the making</span></h3><!-- 
-     --><p class="tooling__text">Finally you will be able completely (T/B)DD your APIs! Test an API against what your have specified in your blueprint!</p>
-      </li>
-    </ul>
-  </div>
-</section>
-
-<section class="logo__buttons">
-  <div class="logo__buttons--in">
-    <p>
-      <!-- <iframe src="./github-btn.html?user=apiaryio&amp;repo=api-blueprint&amp;type=fork&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe> -->
-      <iframe src="./github-btn.html?user=apiaryio&amp;repo=api-blueprint&amp;type=star&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
-      <a href="http://twitter.com/share" class="twitter-share-button" data-text="apiblueprint.org – " data-count="horizontal">Tweet</a>
-      <a href="https://twitter.com/apiblueprint" class="twitter-follow-button" data-show-count="true" data-lang="en">Follow @apiblueprint</a>
-    </p>
-  </div>
-</section>
-
-<section>
-  <a class="fork__link" href="https://github.com/apiaryio/api-blueprint">Fork
-    me on
-    GitHub</a>
-</section>
 
 <footer class="page page--footer">
   <div class="page__inside footer">
