@@ -1105,6 +1105,12 @@ for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
   padding-left 1em
   padding-right 1em
   color $transparentC
+  @media screen and (max-width:660px)
+    display block
+    height 0
+    margin-top ($space/2)
+    width 100%
+    overflow hidden
 
 // undefined helper classes
 
@@ -1133,7 +1139,6 @@ for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
 .comming__soon
   font-family 'TitilliumText', Helvetica, Arial, sans-serif
   font-weight 200
-  line-height 40px
   padding-bottom 0
   padding-top 450px
   max-width 519px
@@ -1147,12 +1152,12 @@ for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
     color $greyviolet
     display block
     white-space pre
-    font-size 30px
+    font-size 25px
     border-radius 15px
     background-color $darkerviolet
     padding ($space/2)
     @media screen and (max-width:510px)
-      font-size: 20px
+      font-size: 17px
 
     span[class]
       font-weight 400

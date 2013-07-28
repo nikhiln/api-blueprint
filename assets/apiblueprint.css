@@ -1379,6 +1379,15 @@ a:hover {
   padding-right: 1em;
   color: rgba(0,0,0,0.001);
 }
+@media screen and (max-width:660px) {
+  .footer--spacer {
+    display: block;
+    height: 0;
+    margin-top: 0.5em;
+    width: 100%;
+    overflow: hidden;
+  }
+}
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -1418,7 +1427,6 @@ a:hover {
 .comming__soon {
   font-family: 'TitilliumText', Helvetica, Arial, sans-serif;
   font-weight: 200;
-  line-height: 40px;
   padding-bottom: 0;
   padding-top: 450px;
   max-width: 519px;
@@ -1435,7 +1443,7 @@ a:hover {
   color: #a19eb6;
   display: block;
   white-space: pre;
-  font-size: 30px;
+  font-size: 25px;
   -webkit-border-radius: 15px;
   border-radius: 15px;
   background-color: #352f64;
@@ -1443,7 +1451,7 @@ a:hover {
 }
 @media screen and (max-width:510px) {
   .comming__soon pre {
-    font-size: 20px;
+    font-size: 17px;
   }
 }
 .comming__soon pre span[class] {
