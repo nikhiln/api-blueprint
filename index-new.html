@@ -94,9 +94,8 @@
   <div class="examples page__inside">
     <h2 class="page__title">Examples</h2>
     <div class="examples__tabs">
-      <ul class="examples__tabs--wrap">
-        <li class="examples__tab active">
-          <a href="#hello_world" class="examples__switch">Hello World</a>
+      <ul class="examples__tabs--wrap"><!-- 
+     --><li class="examples__tab active"><a href="#hello_world" class="examples__switch">Hello World</a>
           <pre><code class="markdown"># My API
 Yay! It works...
 
@@ -144,8 +143,7 @@ Yay! It works...
 }
 </code></pre>
         </li><!-- 
-     --><li class="examples__tab">
-          <a href="#into_action" class="examples__switch">Into action</a>
+     --><li class="examples__tab"><a href="#into_action" class="examples__switch">Into action</a>
           <pre><code class="markdown"># /messages/{id}
 
 ## GET
@@ -209,8 +207,7 @@ Yay! It works...
 }
 </code></pre>
         </li><!-- 
-     --><li class="examples__tab">
-          <a href="#you_name_it" class="examples__switch">You name it</a>
+     --><li class="examples__tab"><a href="#you_name_it" class="examples__switch">You name it</a>
           <pre><code class="markdown"># Message [/messages/{id}]
 
 ## Retrieve Message [GET]
@@ -274,8 +271,7 @@ Yay! It works...
     ]
 }</code></pre>
         </li><!-- 
-     --><li class="examples__tab">
-          <a href="#full_api" class="examples__switch">Full API</a>
+     --><li class="examples__tab"><a href="#full_api" class="examples__switch">Full API</a>
           <pre><code class="markdown"># Message of the Day API
 A simple [MOTD](http://en.wikipedia.org/wiki/Motd_(Unix)) API. 
 
@@ -480,69 +476,7 @@ Delete a message. **Warning:** This action **permanently** removes the message f
     yepnope({
       load: ['acePath/ace.js', 'acePath/ext-searchbox.js', 'acePath/ext-split.js', 'acePath/ext-statusbar.js', 'acePath/ext-textarea.js', 'acePath/mode-html.js', 'acePath/mode-javascript.js', 'acePath/mode-json.js', 'acePath/mode-markdown.js', 'acePath/mode-text.js', 'acePath/mode-xml.js', 'acePath/theme-twilight.js', 'acePath/worker-javascript.js', 'acePath/worker-json.js'],
       complete: function() {
-        var editors = {};
-        ['editor_ace', 'output_ast'].forEach(function(editorName){
-          var editor = ace.edit(editorName);
-          if (editorName == 'editor_ace') {
-            editor.getSession().setMode('ace/mode/markdown')
-            editor.session.setFoldStyle('markbeginend');
-            editor.setShowFoldWidgets(true);
-            editor.setReadOnly(true);
-          }
-          else {
-            editor.session.setFoldStyle('markbeginend');
-            editor.getSession().setMode('ace/mode/json');
-            editor.setReadOnly(true);
-            editor.renderer.hideCursor();
-          }
-          editor.getSession().setUseSoftTabs(true);
-          editor.setHighlightActiveLine(false);
-          editor.setTheme("ace/theme/twilight");
-          editor.setShowPrintMargin(false);
-          editors[editorName] = editor;
-        });
-
-        function loadExample (listItem) {
-          editors['editor_ace'].setValue(listItem.querySelector('code.markdown').firstChild.data, -1);
-          editors['editor_ace'].getSession().getUndoManager().reset();
-          editors['output_ast'].setValue(listItem.querySelector('code.ast').firstChild.data, -1);
-          editors['output_ast'].getSession().getUndoManager().reset();
-        }
-        var hashed = false;
-        if (window.location.hash) {
-          hashed = document.querySelector('a[href*="' + window.location.href.split('#').pop() + '"]');
-        }
-
-        if (!hashed) {
-          loadExample(document.querySelector('li.examples__tab.active'));
-        }
-        else {
-          var old = document.querySelector('li.examples__tab.active');
-          old.className = old.className.replace('active', '').trim();
-          hashed.parentNode.className += ' active';
-          loadExample(hashed.parentNode);
-        }
-
-        function clickListItem () {
-          if (this.parentNode.className.indexOf('active') < 0) {
-            var old = document.querySelector('li.examples__tab.active');
-            old.className = old.className.replace('active', '').trim();
-            this.parentNode.className += ' active';
-            loadExample(this.parentNode);
-          }
-        }
-
-        document.querySelector('.page--examples').className += ' loaded';
-
-        $els = [].slice.call(document.querySelectorAll('.examples__tab a'), 0);
-
-        $els.forEach(function (linkItem) {
-          if (linkItem.addEventListener){
-            linkItem.addEventListener('click', clickListItem, false); 
-          } else if (linkItem.attachEvent){
-            linkItem.attachEvent('onclick', clickListItem);
-          }
-        });
+        initEditors();
       }
     });
   </script>

@@ -64,3 +64,60 @@ initDots = ->
       i--
     frg.innerHTML = s
     dot.insertBefore(frg, dot.lastChild)
+
+initEditors = ->
+  editors = {}
+  ['editor_ace', 'output_ast'].forEach (editorName) ->
+    editor = ace.edit(editorName)
+    if editorName is 'editor_ace'
+      editor.getSession().setMode('ace/mode/markdown')
+      editor.session.setFoldStyle('markbeginend')
+      editor.setShowFoldWidgets(true)
+      editor.setReadOnly(true)
+    else
+      editor.session.setFoldStyle('markbeginend')
+      editor.getSession().setMode('ace/mode/json')
+      editor.setReadOnly(true)
+      editor.renderer.hideCursor()
+
+    editor.getSession().setUseSoftTabs(true)
+    editor.setHighlightActiveLine(false)
+    editor.setTheme("ace/theme/twilight")
+    editor.setShowPrintMargin(false)
+    editors[editorName] = editor
+
+  loadExample = (listItem) ->
+    editors['editor_ace'].setValue(listItem.querySelector('code.markdown').firstChild.data, -1)
+    editors['editor_ace'].getSession().getUndoManager().reset()
+    editors['output_ast'].setValue(listItem.querySelector('code.ast').firstChild.data, -1)
+    editors['output_ast'].getSession().getUndoManager().reset()
+
+  hashed = false
+  if window.location.hash
+    hashed = document.querySelector('a[href*="' + window.location.href.split('#').pop() + '"]')
+
+  if !hashed
+    loadExample(document.querySelector('li.examples__tab.active'))
+  else
+    old = document.querySelector('li.examples__tab.active')
+    old.className = old.className.replace('active', '').trim()
+    hashed.parentNode.className += ' active'
+    loadExample(hashed.parentNode)
+
+  clickListItem = () ->
+    if this.parentNode.className.indexOf('active') < 0
+      old = document.querySelector('li.examples__tab.active')
+      old.className = old.className.replace('active', '').trim()
+      this.parentNode.className += ' active'
+      loadExample(this.parentNode)
+    return
+
+  document.querySelector('.page--examples').className += ' loaded'
+
+  $els = [].slice.call(document.querySelectorAll('.examples__tab a'), 0)
+
+  $els.forEach (linkItem) ->
+    if linkItem.addEventListener
+      linkItem.addEventListener('click', clickListItem, false)
+    else if linkItem.attachEvent
+      linkItem.attachEvent('onclick', clickListItem);
