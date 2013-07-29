@@ -529,55 +529,88 @@ a
 
 
 @keyframes scaler {
+  0% {
+    opacity 0.5
+    transform scale(1)
+  }
   20% {
     opacity 1.0
+    transform scale(1.4)
   }
   40% {
     opacity 0.5
-  }
-}
-
-@keyframes scaler2 {
-  20% {
-    opacity 0.5
-  }
-  40% {
-    opacity 1.0
-  }
-  60% {
-    opacity 0.5
-  }
-}
-
-@keyframes scaler3 {
-  40% {
-    opacity 0.5
-  }
-  60% {
-    opacity 1.0
-  }
-  80% {
-    opacity 0.5
-  }
-}
-
-@keyframes scaler4 {
-  60% {
-    opacity 0.5
-  }
-  80% {
-    opacity 1.0
+    transform scale(1)
   }
   100% {
     opacity 0.5
   }
 }
 
-$i = 4
+@keyframes scaler2 {
+  0% {
+    opacity 0.5
+  }
+  20% {
+    opacity 0.5
+    transform scale(1)
+  }
+  40% {
+    opacity 1.0
+    transform scale(1.4)
+  }
+  60% {
+    opacity 0.5
+    transform scale(1)
+  }
+  100% {
+    opacity 0.5
+  }
+}
+
+@keyframes scaler3 {
+  0% {
+    opacity 0.5
+  }
+  40% {
+    opacity 0.5
+    transform scale(1)
+  }
+  60% {
+    opacity 1.0
+    transform scale(1.4)
+  }
+  80% {
+    opacity 0.5
+    transform scale(1)
+  }
+  100% {
+    opacity 0.5
+  }
+}
+
+@keyframes scaler4 {
+  0% {
+    opacity 0.5
+  }
+  60% {
+    opacity 0.5
+    transform scale(1)
+  }
+  80% {
+    opacity 1.0
+    transform scale(1.4)
+  }
+  100% {
+    opacity 0.5
+    transform scale(1)
+  }
+}
+
+$i = 0
 for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
-  $i += 1
   .anim--dot:nth-of-type(16n+{$i})
     animation-delay $dur
+  $i += 1
 
 .ab_testing__v_logo + .ab_testing__v_a
   display none !important
