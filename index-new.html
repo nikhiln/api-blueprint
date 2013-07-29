@@ -55,7 +55,7 @@
 
       <section class="links">
         <a class="link link--getStarted" href="#get-started">Get Started</a><!--
-       --><a class="link link--documentation" href="https://github.com/apiaryio/api-blueprint">Documentation</a>
+       --><a class="link link--documentation" href="https://github.com/apiaryio/api-blueprint/blob/master/API%20Blueprint%20Specification.md">Documentation</a>
       </section>
 
     </section>
@@ -73,7 +73,7 @@
       </li><!--
      --><li class="versus__item"><span class="versus__bg versus--swagger"></span>
         <h2 class="versus__title">JSON is a machine format</h2>
-        <p class="versus__about">Leave it to machines. Let's write a poem.</p>
+        <p class="versus__about">Leave it to machines.</p>
         <p class="versus__about">Who will edit your documentation next year? Who will proofread it? With API Blueprint everybody can! Your designer and copywriter too.</p>
       </li><!--
      --><!-- <li class="versus__item"><span class="versus__bg versus--changelog"></span>
@@ -96,16 +96,19 @@
     <div class="examples__tabs">
       <ul class="examples__tabs--wrap"><!-- 
      --><li class="examples__tab active"><a href="#hello_world" class="examples__switch">Hello World</a>
-          <pre><code class="markdown"># My API
-Yay! It works...
-
-# GET /message
+          <pre><code class="markdown"># GET /message
 + Response 200 (text/plain)
         
-        Hello World!</code></pre>
+        Hello World!
+
+
+
+
+
+</code></pre>
 <pre><code class="ast">{
     "name": "My API",
-    "description": "Yay! It works...",
+    "description": "",
     "resourceGroups": [
         {
             "name": "",
@@ -217,7 +220,6 @@ Yay! It works...
 
 ## Delete Message [DELETE]
 + Response 204
-
 </code></pre>
 <pre><code class="ast">{
     "name": "",
@@ -289,7 +291,6 @@ Retrieve a message by its *id*.
 Delete a message. **Warning:** This action **permanently** removes the message from the database.
 
 + Response 204
-
 </code></pre>
 <pre><code class="ast">{
     "name": "Message of the Day API",
@@ -346,9 +347,9 @@ Delete a message. **Warning:** This action **permanently** removes the message f
         </li>
       </ul>
       <div class="examples__editor" data-overtitle="apiblueprint"><div id="editor_ace"></div></div>
-      <div class="examples__json" data-overtitle="ugly json"><div id="output_ast"></div></div>
+      <div class="examples__json" data-overtitle="json output"><div id="output_ast"></div></div>
     </div>
-    <p class="examples__links"><a href="https://github.com/apiaryio/api-blueprint/tree/master/examples">More Examples</a> <a href="https://github.com/apiaryio/api-blueprint">Full Documentation</a></p>
+    <p class="examples__links"><a href="https://github.com/apiaryio/api-blueprint/tree/master/examples">More Examples</a> <a href="https://github.com/apiaryio/api-blueprint/blob/master/API%20Blueprint%20Specification.md">Full Documentation</a></p>
   </div>
 </div>
 
@@ -376,11 +377,17 @@ Delete a message. **Warning:** This action **permanently** removes the message f
       </section>
       <section>
         <h3>Create your first API</h3>
-        <pre><code><span class="pre">$ <strong>echo "# My API\n" | snowcrash --format json</strong></span>
+        <pre><code><span class="pre">$ <strong>cat</strong> << 'EOF' | <strong>snowcrash</strong> --format json</span>
+<span class="pre"># My API</span>
+<span class="pre">## GET /message</span>
+<span class="pre">+ Response 200 (text/plain)</span>
+<span class="pre"></span>
+<span class="pre">        Hello World!</span>
+<span class="pre">EOF</span>
 <span class="pre">{</span>
 <span class="pre">  <strong class="hello--color--key">"name"</strong>: <strong class="hello--color--value">"My API"</strong>,</span>
 <span class="pre">  <strong class="hello--color--key">"description"</strong>: <strong class="hello--color--value">""</strong></span>
-<span class="pre">}</span></code></pre>
+<span class="pre">  ...</span></code></pre>
       </section>
     </article>
   </div>
@@ -429,10 +436,15 @@ Delete a message. **Warning:** This action **permanently** removes the message f
       <li class="tooling__item">
         <span class="tooling__ico"><span class="tooling__ico__logo tooling__ico--construction"></span></span><!-- 
      --><h3 class="tooling__title"><span class="larger">API testing framework</span> <span class="block smaller">In the making</span></h3><!-- 
-     --><p class="tooling__text">Finally you will be able completely (T/B)DD your APIs! Test an API against what your have specified in your blueprint!</p>
+     --><p class="tooling__text">Finally you will be able completely BDD your API backend and test it against what your have specified in your blueprint!
+</p>
+      </li>
+      <li class="tooling__item">
+        <span class="tooling__ico"><span class="tooling__ico__logo tooling__ico--construction"></span></span><!-- 
+     --><h3 class="tooling__title"><span class="larger">&lt insert your tool here &gt</span></h3><!-- 
+     -->
       </li>
     </ul>
-    <p class="tooling__share"><span class="tooling__share--ico">What are your favourite APIs dev-tools? <a href="#">Insert yours</a> and expand the list.</span></p>
   </div>
 </section>
 
