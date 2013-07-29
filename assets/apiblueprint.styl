@@ -9,6 +9,8 @@ $violet = #533b89
 $greyviolet = #a19eb6
 $lighterviolet = #b09ee1
 $lightviolet = #b4bae9
+$lightestviolet = #d7d2ff
+
 $darkviolet = #635e8c
 $darkerviolet = #3a2765
 $violetonviolet = #7966ac
@@ -45,7 +47,7 @@ html
 .started__stack
 .page__title
   font-family 'TitilliumText', Helvetica, Arial, sans-serif
-  font-weight 200
+  font-weight 100
 
 .page__title
   font-size 300%
@@ -245,7 +247,6 @@ h1
     text-align: center
     display: inline-block
     box-sizing: border-box
-    font-weight bold
     width: 44%
     text-decoration none
     &:hover
@@ -253,19 +254,19 @@ h1
 
   .link--getStarted
     color: #fff
+    width 40%
     background-color: $darkgreen
     margin: 0 1.5% 0 3.5%
     &:hover
-      background-color darken(@background-color, 30%)
-      box-shadow inset 0 0 10px lighten($darkgreen, 10%)
+      background-color darken(@background-color, 15%)
 
   .link--documentation
     color: #fff
+    width 49%
     background-color: $violetonviolet
     margin: 0 3.5% 0 3.5%
     &:hover
-      background-color darken(@background-color, 30%)
-      box-shadow inset 0 0 10px lighten($violetonviolet, 10%)
+      background-color darken(@background-color, 15%)
 
   @media screen and (max-width:660px)
     position: relative
@@ -288,6 +289,7 @@ h1
     margin-top: -2.5em
     right: 0.25em
     width: 12em
+    font-weight bold
 
     .link
       width: 100%
@@ -305,10 +307,11 @@ h1
     min-width: 20em
     text-align: right
     font-size: 1.5em
+    font-weight bold
 
     .link--documentation
       margin-right 0
-      margin-left 7%
+      margin-left 6%
 
 .page--controverse
   color: $darkviolet
@@ -339,14 +342,14 @@ h1
   display: inline-block
   background-color: $transparentC
   box-sizing: border-box
-  border-left: 1em solid $transparentC
-  border-right: 1em solid $transparentC
+  border-left: 0.5em solid $transparentC
+  border-right: 0.5em solid $transparentC
   
   .versus__about
     box-sizing: border-box
     line-height 1.5 
-    border-left: 2em solid $transparentC
-    border-right: 2em solid $transparentC
+    border-left: 1em solid $transparentC
+    border-right: 1em solid $transparentC
 
 @media screen and (max-width:660px)
   /* three items */
@@ -669,7 +672,7 @@ for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
     height 30px
     width 30px
     background-color #b36cd0
-    background-position -73px 7px
+    background-position -69px 10px
 
 .anim--human
   .anim__dots__all
@@ -796,7 +799,7 @@ for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
     padding-left 3em
 
 .versus__item
-  padding-top $space
+  padding-top (2*$space)
   .versus__bg
     display block
     height 100px
@@ -855,11 +858,7 @@ for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
   pre + .subnotes
     margin-top -0.5em
     margin-bottom 0
-    padding-left 0.5em
-    opacity 0.7
-    
-    &:hover
-      opacity 1
+    font-size 85%
 
 .started__texts--subheading
   font-family 'TitilliumText', Helvetica, Arial, sans-serif
@@ -884,19 +883,19 @@ for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
   position relative
   box-sizing border-box
   display inline-block
-  line-height 140px
-  min-height 130px
+  line-height 160px
+  min-height 150px
   text-align center
   font-size 3em
-  width 33.3333%
+  width 25%
   border-left 1em solid $transparentC
   vertical-align top
 
   &.binding__item--link
-    line-height 40px
+    line-height 26px
     font-size 1.4em
     border-left-width 2em
-    padding 7px 1em 0
+    padding 30px 1em 0
 
 .binding__item--link--border
   position absolute
@@ -913,17 +912,21 @@ for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
   position relative
   background-color $darkgreen
   border-radius 20em
-  padding: 0.5em 1.5em
+  padding: 0.5em 1.3em
+  font-size 100%
+  line-height 150%
   font-weight bold
   text-align: center
   display: inline-block
-  margin 5px 0 0 0
+  margin 15px 0 0 0
   box-sizing: border-box
   text-decoration none
-  
+
   &:hover
+    background-color darken(@background-color, 15%)
     text-decoration underline
 
+/*
 .binding__item:first-child:nth-last-child(2)
 .binding__item:first-child:nth-last-child(2) ~ .binding__item
   width 50%
@@ -935,6 +938,7 @@ for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
 .binding__item:first-child:nth-last-child(4)
 .binding__item:first-child:nth-last-child(4) ~ .binding__item
   width 25%
+*/
 
 @media screen and (max-width:660px)
   .bindings .binding__list
@@ -957,12 +961,14 @@ for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
   right 0
   height 100%
   border-radius 15px
-  background-color $tooling 
+  background-color $tooling
   text-decoration none
   color $white
+  font-weight bold
+  transition all 0.2s linear
   
   &:hover
-    box-shadow inset 0 0 60px lighten(rgba(#3c3662, 100%), 50%)
+    background-color lighten(@background-color, 15%)
 
 .binding__bg
   background-image url('sprite.png')
@@ -970,7 +976,7 @@ for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
   position relative
 
   &.binding--nodejs
-    top 33px
+    top 41px
     width 140px
     margin 0 auto
     height 60px
@@ -995,6 +1001,10 @@ for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
 .tooling__item
   position relative
   display table-row
+
+  .smaller
+  .tooling__text
+    color $lightestviolet
 
 .tooling__ico
 .tooling__title
@@ -1125,10 +1135,26 @@ for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
     display inline-block
     margin-left 1em
 
+.footer__licence
+  float right
+
+.footer__logo--float
+  float left
+  display block
+
+.footer__licence
+  display block
+
+@media screen and (max-width:660px)
+  .footer__licence
+  .footer__logo--float
+    float none
+    margin $space auto 0
+
 .footer--leftSide
 .footer--rightSide
   margin 0
-  padding 0.5em 0
+  padding 0
   @media screen and (max-width:660px)
     float none
     text-align center
