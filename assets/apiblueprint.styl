@@ -94,7 +94,7 @@ html
 .logo_animation
   // placeholder
   position relative
-  height: 280px
+  height: 300px
   width: 100%
   margin-top $space
   transition all 0.5s linear
@@ -514,6 +514,7 @@ a
   top 0
   left 0
   height 0
+  padding-left 40px
 
 .anim--dot
   display inline-block
@@ -521,7 +522,7 @@ a
   height 4px
   line-height 1px
   margin-top -2px
-  margin-left 7px
+  margin-left 8px
   border-radius 100%
   background-color #fff
   opacity 0.5
@@ -529,56 +530,45 @@ a
 
 @keyframes scaler {
   20% {
-    transform scale(1.2)
     opacity 1.0
   }
   40% {
-    transform scale(1)
     opacity 0.5
   }
 }
 
 @keyframes scaler2 {
   20% {
-    transform scale(1)
     opacity 0.5
   }
   40% {
-    transform scale(1.2)
     opacity 1.0
   }
   60% {
-    transform scale(1)
     opacity 0.5
   }
 }
 
 @keyframes scaler3 {
   40% {
-    transform scale(1)
     opacity 0.5
   }
   60% {
-    transform scale(1.2)
     opacity 1.0
   }
   80% {
-    transform scale(1)
     opacity 0.5
   }
 }
 
 @keyframes scaler4 {
   60% {
-    transform scale(1)
     opacity 0.5
   }
   80% {
-    transform scale(1.2)
     opacity 1.0
   }
   100% {
-    transform scale(1)
     opacity 0.5
   }
 }
@@ -606,8 +596,8 @@ for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
   .anim--circle
     height 36px
     width 36px
-    top -58px
-    left 307px
+    top -65px
+    left 354px
     margin-top -18px
     background-color $orange
     background-position -113px -32px
@@ -618,8 +608,8 @@ for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
     .anim--dot
       animation-name scaler3
   .anim--circle
-    left -363px
-    top -121px
+    left -397px
+    top -134px
     margin-top -25px
     height 50px
     width 50px
@@ -633,8 +623,8 @@ for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
       animation-duration 8s
       animation-name scaler3
   .anim--circle
-    left 133px
-    top 66px
+    left 160px
+    top 81px
     margin-top -15px
     height 30px
     width 30px
@@ -647,8 +637,8 @@ for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
     .anim--dot
       animation-name scaler
   .anim--circle
-    left -160px
-    top 72px
+    left -184px
+    top 91px
     margin-top -27px
     height 54px
     width 54px
@@ -661,8 +651,8 @@ for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
     .anim--dot
       animation-name scaler4
   .anim--circle
-    left -9px
-    top -143px
+    left -5px
+    top -171px
     margin-top -33px
     height 64px
     width 64px
@@ -738,7 +728,7 @@ for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
   .logo_animation
     height 150px
     margin-top 0
-    transform scale(0.5)
+    transform scale(0.45)
     
     .anim__item
       margin-top 0

@@ -57,7 +57,7 @@ initDots = ->
     i = parseInt dot.getAttribute('data-dots'), 10
     frg = document.createElement 'span'
     frg.setAttribute 'class', "anim__dots__all anim__len__#{i} anim__delay__#{ind}"
-    dot.style.width = frg.style.width = i * 11 + 'px'
+    dot.style.width = frg.style.width = i * 12 + 'px'
     s = ''
     while (i)
       s += '<span class="anim--dot"></span>'
