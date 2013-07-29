@@ -368,7 +368,7 @@ Delete a message. **Warning:** This action **permanently** removes the message f
       <p class="started__texts--subheading">Use the reference API Blueprint parser – <a href="https://github.com/apiaryio/snowcrash">Snow Crash</a> or one of its <a href="https://github.com/apiaryio/snowcrash#bindings">bindings</a>.</p>
       <section>
         <h3>Get Snow Crash</h3>
-        <pre><code class="pre">$ <strong>brew</strong> install --HEAD \
+        <pre><code class="pre">$ brew install --HEAD \
   https://raw.github.com/apiaryio/snowcrash/master/tools/homebrew/snowcrash.rb</code></pre>
         <p class="subnotes">
           Build notes for platforms: <a href="https://github.com/apiaryio/snowcrash#snow-crash-command-line-tool">Linux</a>,
@@ -377,7 +377,7 @@ Delete a message. **Warning:** This action **permanently** removes the message f
       </section>
       <section>
         <h3>Create your first API</h3>
-        <pre><code><span class="pre">$ <strong>cat</strong> << 'EOF' | <strong>snowcrash</strong> --format json</span>
+        <pre><code><span class="pre">$ <strong>cat << 'EOF' | snowcrash --format json</strong></span>
 <span class="pre"># My API</span>
 <span class="pre">## GET /message</span>
 <span class="pre">+ Response 200 (text/plain)</span>
@@ -385,8 +385,8 @@ Delete a message. **Warning:** This action **permanently** removes the message f
 <span class="pre">        Hello World!</span>
 <span class="pre">EOF</span>
 <span class="pre">{</span>
-<span class="pre">  <strong class="hello--color--key">"name"</strong>: <strong class="hello--color--value">"My API"</strong>,</span>
-<span class="pre">  <strong class="hello--color--key">"description"</strong>: <strong class="hello--color--value">""</strong></span>
+<span class="pre">  <span class="hello--color--key">"name"</span>: <span class="hello--color--value">"My API"</span>,</span>
+<span class="pre">  <span class="hello--color--key">"description"</span>: <span class="hello--color--value">""</span></span>
 <span class="pre">  ...</span></code></pre>
       </section>
     </article>
