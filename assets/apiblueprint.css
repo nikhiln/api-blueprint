@@ -1436,19 +1436,6 @@ a:hover {
   text-align: center;
   font-size: 50px;
 }
-.comming__soon pre {
-  font-family: 'Source Code Pro', monospace;
-  margin: 1em auto;
-  color: #a19eb6;
-  display: block;
-  white-space: pre;
-  font-size: 25px;
-  -webkit-border-radius: 15px;
-  border-radius: 15px;
-  background-color: #352f64;
-  padding: 0.5em;
-}
-
 .comming__soon {
   font-family: 'TitilliumText', Helvetica, Arial, sans-serif;
   font-weight: 200;
