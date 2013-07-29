@@ -1634,6 +1634,9 @@ a:hover {
 .ace-twilight.ace_editor {
   background-color: #1d1a27;
 }
+.examples__editor {
+  position: relative;
+}
 .examples__editor .ace-twilight.ace_editor {
   background-color: #1d1a27;
 }
@@ -1651,6 +1654,7 @@ a:hover {
   color: #757399;
 }
 .examples__json {
+  position: relative;
   border-top: 1px dashed #554b6e;
 }
 .examples__json .ace-twilight {
@@ -1671,6 +1675,19 @@ a:hover {
 .examples__json .ace-twilight .ace_gutter {
   background-color: #362e50;
   color: #757399;
+}
+.examples__editor:after,
+.examples__json:after {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  pointer-events: none;
+  content: attr(data-overtitle);
+  color: rgba(161,158,182,0.2);
+  font-size: 2.5em;
+  padding: 0;
+  font-family: 'TitilliumText', Helvetica, Arial, sans-serif;
+  font-weight: 100;
 }
 @-moz-keyframes scaler {
   0% {
