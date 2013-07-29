@@ -76,11 +76,7 @@
         <p class="versus__about">Leave it to machines.</p>
         <p class="versus__about">Who will edit your documentation next year? Who will proofread it? With API Blueprint everybody can! Your designer and copywriter too.</p>
       </li><!--
-     --><!-- <li class="versus__item"><span class="versus__bg versus--changelog"></span>
-        <h2 class="versus__title">API Blueprint <span class="versus__word">vs.</span> <span class="versus__whatever">API Changelog</span> </h2>
-        <p class="versus__about">With API Blueprint you do not need API Changelog.</p>
-        <p class="versus__about">API Blueprint has its own life cycle living in the repository with your API.</p>
-      </li> --><!--
+     --><!--
     --><li class="versus__item"><span class="versus__bg versus--google"></span>
         <h2 class="versus__title">Your code is evolving</h2>
         <p class="versus__about">Branching. It is versioned. It is tested. So should your API documentation.</p>
@@ -377,7 +373,7 @@ Delete a message. **Warning:** This action **permanently** removes the message f
       </section>
       <section>
         <h3>Create your first API</h3>
-        <pre><code><span class="pre">$ <strong>cat << 'EOF' | snowcrash --format json</strong></span>
+        <pre><code><span class="pre">$ <strong>cat &lt;&lt; 'EOF' | snowcrash --format json</strong></span>
 <span class="pre"># My API</span>
 <span class="pre">## GET /message</span>
 <span class="pre">+ Response 200 (text/plain)</span>
@@ -436,13 +432,12 @@ Delete a message. **Warning:** This action **permanently** removes the message f
       <li class="tooling__item">
         <span class="tooling__ico"><span class="tooling__ico__logo tooling__ico--construction"></span></span><!-- 
      --><h3 class="tooling__title"><span class="larger">API testing framework</span> <span class="block smaller">In the making</span></h3><!-- 
-     --><p class="tooling__text">Finally you will be able completely BDD your API backend and test it against what your have specified in your blueprint!
-</p>
+     --><p class="tooling__text">Build your API backed in BDD using the API design specified in your blueprint!</p>
       </li>
       <li class="tooling__item">
-        <span class="tooling__ico"><span class="tooling__ico__logo tooling__ico--construction"></span></span><!-- 
-     --><h3 class="tooling__title"><span class="larger">&lt insert your tool here &gt</span></h3><!-- 
-     -->
+        <span class="tooling__ico"><span class="tooling__ico__logo tooling__ico--construction"></span></span><!--
+     --><h3 class="tooling__title"><span class="larger">&lt; insert your tool here &gt;</span></h3><!--
+     --><p class="tooling__text">Let's all build a thriving community of interoperable API Tools! If you support API Blueprint, fork this repo and send a pull-request with your library.</p>
       </li>
     </ul>
   </div>
