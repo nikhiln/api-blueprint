@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="assets/fonts.css">
   <link rel="stylesheet" href="assets/apiblueprint.css">
   <script>var ab_variant = 'default';</script>
+  <script src="assets/yepnope.min.js"></script>
   <script src="assets/helpers.js"></script>
 </head>
 <body>
@@ -92,7 +93,266 @@
 <div class="page page--examples">
   <div class="examples page__inside">
     <h2 class="page__title">Examples</h2>
-    <p>To be delivered...</p>
+    <div class="examples__tabs">
+      <ul class="examples__tabs--wrap">
+        <li class="examples__tab active">
+          <a href="#hello_world" class="examples__switch">Hello World</a>
+          <pre><code class="markdown"># My API
+Yay! It works...
+
+# GET /message
++ Response 200 (text/plain)
+        
+        Hello World!</code></pre>
+<pre><code class="ast">{
+    "name": "My API",
+    "description": "Yay! It works...",
+    "resourceGroups": [
+        {
+            "name": "",
+            "description": "",
+            "resources": [
+                {
+                    "uriTemplate": "/message",
+                    "name": "",
+                    "description": "",
+                    "object": {},
+                    "methods": [
+                        {
+                            "method": "GET",
+                            "name": "",
+                            "description": "",
+                            "responses": [
+                                {
+                                    "name": "200",
+                                    "description": "",
+                                    "body": "Hello World!\n",
+                                    "schema": "",
+                                    "headers": [
+                                        {
+                                            "Content-Type": "text/plain"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+</code></pre>
+        </li><!-- 
+     --><li class="examples__tab">
+          <a href="#into_action" class="examples__switch">Into action</a>
+          <pre><code class="markdown"># /messages/{id}
+
+## GET
++ Response 200 (text/plain)
+
+        Hello World!
+
+## DELETE
++ Response 204
+</code></pre>
+<pre><code class="ast">{
+    "name": "",
+    "description": "",
+    "resourceGroups": [
+        {
+            "name": "",
+            "description": "",
+            "resources": [
+                {
+                    "uriTemplate": "/messages/{id}",
+                    "name": "",
+                    "description": "",
+                    "object": {},
+                    "methods": [
+                        {
+                            "method": "GET",
+                            "name": "",
+                            "description": "",
+                            "responses": [
+                                {
+                                    "name": "200",
+                                    "description": "",
+                                    "body": "Hello World!\n",
+                                    "schema": "",
+                                    "headers": [
+                                        {
+                                            "Content-Type": "text/plain"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "method": "DELETE",
+                            "name": "",
+                            "description": "",
+                            "responses": [
+                                {
+                                    "name": "204",
+                                    "description": "",
+                                    "body": "",
+                                    "schema": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+</code></pre>
+        </li><!-- 
+     --><li class="examples__tab">
+          <a href="#you_name_it" class="examples__switch">You name it</a>
+          <pre><code class="markdown"># Message [/messages/{id}]
+
+## Retrieve Message [GET]
++ Response 200 (text/plain)
+
+        Hello World!
+
+## Delete Message [DELETE]
++ Response 204
+
+</code></pre>
+<pre><code class="ast">{
+    "name": "",
+    "description": "",
+    "resourceGroups": [
+        {
+            "name": "",
+            "description": "",
+            "resources": [
+                {
+                    "uriTemplate": "/messages/{id}",
+                    "name": "Message",
+                    "description": "",
+                    "object": {},
+                    "methods": [
+                        {
+                            "method": "GET",
+                            "name": "Retrieve Message",
+                            "description": "",
+                            "responses": [
+                                {
+                                    "name": "200",
+                                    "description": "",
+                                    "body": "Hello World!\n",
+                                    "schema": "",
+                                    "headers": [
+                                        {
+                                            "Content-Type": "text/plain"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "method": "DELETE",
+                            "name": "Delete Message",
+                            "description": "",
+                            "responses": [
+                                {
+                                    "name": "204",
+                                    "description": "",
+                                    "body": "",
+                                    "schema": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}</code></pre>
+        </li><!-- 
+     --><li class="examples__tab">
+          <a href="#full_api" class="examples__switch">Full API</a>
+          <pre><code class="markdown"># Message of the Day API
+A simple [MOTD](http://en.wikipedia.org/wiki/Motd_(Unix)) API. 
+
+# Message [/messages/{id}]
+This resource represents one particular message identified by its *id*.
+
+## Retrieve Message [GET]
+Retrieve a message by its *id*.
+
++ Response 200 (text/plain)
+
+        Hello World!
+
+## Delete Message [DELETE]
+Delete a message. **Warning:** This action **permanently** removes the message from the database.
+
++ Response 204
+
+</code></pre>
+<pre><code class="ast">{
+    "name": "Message of the Day API",
+    "description": "A simple [MOTD](http://en.wikipedia.org/wiki/Motd_(Unix)) API. \n\n",
+    "resourceGroups": [
+        {
+            "name": "",
+            "description": "",
+            "resources": [
+                {
+                    "uriTemplate": "/messages/{id}",
+                    "name": "Message",
+                    "description": "This resource represents one particular message identified by its *id*.\n\n",
+                    "object": {},
+                    "methods": [
+                        {
+                            "method": "GET",
+                            "name": "Retrieve Message",
+                            "description": "Retrieve a message by its *id*.\n\n",
+                            "responses": [
+                                {
+                                    "name": "200",
+                                    "description": "",
+                                    "body": "Hello World!\n",
+                                    "schema": "",
+                                    "headers": [
+                                        {
+                                            "Content-Type": "text/plain"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "method": "DELETE",
+                            "name": "Delete Message",
+                            "description": "Delete a message. **Warning:** This action **permanently** removes the message from the database.\n\n",
+                            "responses": [
+                                {
+                                    "name": "204",
+                                    "description": "",
+                                    "body": "",
+                                    "schema": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+</code></pre>
+        </li>
+      </ul>
+      <div class="examples__editor"><div id="editor_ace"></div></div>
+      <div class="examples__json"><div id="output_ast"></div></div>
+    </div>
+    <p class="examples__links"><a href="https://github.com/apiaryio/api-blueprint/tree/master/examples">More Examples</a> <a href="https://github.com/apiaryio/api-blueprint">Full Documentation</a></p>
   </div>
 </div>
 
@@ -176,7 +436,7 @@
      --><p class="tooling__text">Finally you will be able completely (T/B)DD your APIs! Test an API against what your have specified in your blueprint!</p>
       </li>
     </ul>
-    <p class="tooling__share"><span class="tooling__share--ico">What are your favourite APIs dev-tools? <a href="#">Share a link</a> and expand the list.</span></p>
+    <p class="tooling__share"><span class="tooling__share--ico">What are your favourite APIs dev-tools? <a href="#">Insert yours</a> and expand the list.</span></p>
   </div>
 </section>
 
@@ -213,5 +473,79 @@
   <script defer>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.async=true;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
   <script>initDots();</script>
+  <script>
+    yepnope.paths = {
+      'acePath': './assets/ace-noconflict'
+    };
+    yepnope({
+      load: ['acePath/ace.js', 'acePath/ext-searchbox.js', 'acePath/ext-split.js', 'acePath/ext-statusbar.js', 'acePath/ext-textarea.js', 'acePath/mode-html.js', 'acePath/mode-javascript.js', 'acePath/mode-json.js', 'acePath/mode-markdown.js', 'acePath/mode-text.js', 'acePath/mode-xml.js', 'acePath/theme-twilight.js', 'acePath/worker-javascript.js', 'acePath/worker-json.js'],
+      complete: function() {
+        var editors = {};
+        ['editor_ace', 'output_ast'].forEach(function(editorName){
+          var editor = ace.edit(editorName);
+          if (editorName == 'editor_ace') {
+            editor.getSession().setMode('ace/mode/markdown')
+            editor.session.setFoldStyle('markbeginend');
+            editor.setShowFoldWidgets(true);
+            editor.setReadOnly(true);
+          }
+          else {
+            editor.session.setFoldStyle('markbeginend');
+            editor.getSession().setMode('ace/mode/json');
+            editor.setReadOnly(true);
+            editor.renderer.hideCursor();
+          }
+          editor.getSession().setUseSoftTabs(true);
+          editor.setHighlightActiveLine(false);
+          editor.setTheme("ace/theme/twilight");
+          editor.setShowPrintMargin(false);
+          editors[editorName] = editor;
+        });
+
+        function loadExample (listItem) {
+          editors['editor_ace'].setValue(listItem.querySelector('code.markdown').firstChild.data, -1);
+          editors['editor_ace'].getSession().getUndoManager().reset();
+          editors['output_ast'].setValue(listItem.querySelector('code.ast').firstChild.data, -1);
+          editors['output_ast'].getSession().getUndoManager().reset();
+        }
+        var hashed = false;
+        if (window.location.hash) {
+          hashed = document.querySelector('a[href*="' + window.location.href.split('#').pop() + '"]');
+        }
+
+        if (!hashed) {
+          loadExample(document.querySelector('li.examples__tab.active'));
+        }
+        else {
+          var old = document.querySelector('li.examples__tab.active');
+          old.className = old.className.replace('active', '').trim();
+          hashed.parentNode.className += ' active';
+          loadExample(hashed.parentNode);
+        }
+
+        function clickListItem () {
+          if (this.parentNode.className.indexOf('active') < 0) {
+            var old = document.querySelector('li.examples__tab.active');
+            old.className = old.className.replace('active', '').trim();
+            this.parentNode.className += ' active';
+            loadExample(this.parentNode);
+          }
+        }
+
+        document.querySelector('.page--examples').className += ' loaded';
+
+        $els = [].slice.call(document.querySelectorAll('.examples__tab a'), 0);
+
+        $els.forEach(function (linkItem) {
+          if (linkItem.addEventListener){
+            linkItem.addEventListener('click', clickListItem, false); 
+          } else if (linkItem.attachEvent){
+            linkItem.attachEvent('onclick', clickListItem);
+          }
+        });
+      }
+    });
+  </script>
+  <script>document.body.parentNode.className += 'js';</script>
 </body>
 </html>
