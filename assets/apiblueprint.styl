@@ -1,26 +1,33 @@
 $gutter = 1em
 $color = #f43059
-$green = #7dffad
+$green = #40f6bb
 $white = #fff
 $darkgreen = #00d779
 $limegreen = #46cc78
-$violet = #4d4588
+
+$violet = #533b89
 $greyviolet = #a19eb6
-$lighterviolet = #aba4df
+$lighterviolet = #b09ee1
 $lightviolet = #b4bae9
 $darkviolet = #635e8c
-$darkerviolet = #352f64
-$violetonviolet = #736daa
-$logoviolet = #c1baff
+$darkerviolet = #3a2765
+$violetonviolet = #7966ac
+$logoviolet = #c7b2ff
 $transparentC = rgba(0,0,0,0.001)
 $maxWidth = 960px
+$tooling = #6b53a5
 $grey = #aaa
+$foot = #322b44
 
-$pink = #d083f0
-$orange = #e39f55
-$salmon = #d8476d
-$sky = #6fc6e2
-$violetblue = #6d6bde
+$pink = #c154d1
+$orange = #ec9c4a
+$salmon = #e91166
+$sky = #55c8e5
+$violetblue = #7759e1
+
+$method = #ada6ff
+$uri = #ffc889
+$preformated = #bca6ff
 
 $horizSpace = 2em
 $space = 1em
@@ -193,7 +200,7 @@ h1
     color $greyviolet
     padding 2*$space 0
     display block
-    margin-bottom $horizSpace
+    margin-bottom (3*$space)
     font-size 1.5em
     white-space pre
     overflow auto
@@ -215,13 +222,13 @@ h1
       content: "0" counter(linenumber)
 
 .hello--color--method
-  color: #ada6ff
+  color: $method
 .hello--color--uri
-  color: #ffc98f
+  color: $uri
 .hello--color--keyword
   color: #fff
 .hello--color--preformatted
-  color: #b6afff
+  color: $preformated
 .hello--color--value
   color: $green
 .hello--color--key
@@ -411,7 +418,7 @@ h1
   text-align center
 
 .page--examples
-  background #413a76 linear-gradient(top, #373167, #413a76 750px)
+  background #463177 linear-gradient(top, #3c2768, #463177 750px)
 
 .examples__title
   font-size 300%
@@ -438,11 +445,11 @@ a
   padding:$gutter
 
 .page--headlines
-  background-image: linear-gradient(top, #282251, $violet 800px)
+  background-image: linear-gradient(top, #2a1b52, $violet 800px)
 
 .highlightedGreen
   margin-top (2*$space)
-  background-color $limegreen
+  background-color $darkgreen
   border-radius $space
   padding (3*$space)
   margin-bottom $space
@@ -950,10 +957,12 @@ for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
   right 0
   height 100%
   border-radius 15px
-  box-shadow inset 0 0 60px lighten(rgba(#3c3662, 60%), 50%)
-  background-color $transparentC 
+  background-color $tooling 
   text-decoration none
   color $white
+  
+  &:hover
+    box-shadow inset 0 0 60px lighten(rgba(#3c3662, 100%), 50%)
 
 .binding__bg
   background-image url('sprite.png')
@@ -978,7 +987,7 @@ for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
   overflow hidden
   border 1px solid $violetonviolet
   border-collapse collapse
-  background-color #655da3
+  background-color $tooling
   font-size 1.5em
   position relative
   padding 0
@@ -1068,7 +1077,7 @@ for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
   z-index 10
   position fixed
   right 0
-  top 20px
+  top 90px
   width 123px
   margin-right -63px
   padding-left 68px
@@ -1087,7 +1096,7 @@ for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
     margin-right 0
 
 .page--footer
-  background-color #302d43
+  background-color $foot
   font-size 1.3em
   padding-top 3em
   padding-bottom 3em
