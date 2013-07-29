@@ -207,7 +207,7 @@ h1 {
   color: #a19eb6;
   padding: 2em 0;
   display: block;
-  margin-bottom: 3em;
+  margin-bottom: 4em;
   font-size: 1.5em;
   white-space: pre;
   overflow: auto;
@@ -234,6 +234,7 @@ h1 {
   position: absolute;
   left: 0;
   color: #827dba;
+  pointer-events: none;
   content: "0" counter(linenumber);
 }
 .hello--color--method {
@@ -272,7 +273,7 @@ h1 {
   text-decoration: none;
 }
 .links .link:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 .links .link--getStarted {
   color: #fff;
@@ -505,7 +506,7 @@ a:hover {
   background-image: linear-gradient(top, #2a1b52 0, #533b89 800px);
 }
 .highlightedGreen {
-  margin-top: 2em;
+  margin-top: 4em;
   background-color: #00d779;
   -webkit-border-radius: 1em;
   border-radius: 1em;
@@ -1020,6 +1021,7 @@ a:hover {
 .started__texts {
   color: #b09ee1;
   font-size: 1.4em;
+  padding-top: 1em;
 }
 .started {
   font-family: 'Proxima Nova', Helvetica, Arial, sans-serif;
@@ -1058,12 +1060,9 @@ a:hover {
 .started pre + .subnotes {
   margin-top: -0.5em;
   margin-bottom: 0;
-  font-size: 85%;
 }
 .started__texts--subheading {
-  font-family: 'TitilliumText', Helvetica, Arial, sans-serif;
-  font-weight: 200;
-  margin-bottom: 0;
+  margin-bottom: 1em;
   font-size: 1.25em;
 }
 .text--italics {
@@ -1071,10 +1070,10 @@ a:hover {
 }
 .bindings {
   font-family: 'Proxima Nova', Helvetica, Arial, sans-serif;
-  padding-bottom: 3em;
+  padding-bottom: 4em;
 }
 .binding__list {
-  padding: 0;
+  padding: 0 0 3em 0;
   margin: 0 0 0 -3em;
   list-style-type: none;
   display: block;
@@ -1089,15 +1088,20 @@ a:hover {
   min-height: 150px;
   text-align: center;
   font-size: 3em;
+  overflow: hidden;
   width: 25%;
   border-left: 1em solid rgba(0,0,0,0.001);
   vertical-align: top;
 }
-.binding__item.binding__item--link {
+.binding__item.binding__item--link,
+.binding__item.binding__item--making {
   line-height: 26px;
   font-size: 1.4em;
   border-left-width: 2em;
   padding: 30px 1em 0;
+}
+.binding__item.binding__item--making {
+  padding-top: 0px;
 }
 .binding__item--link--border {
   position: absolute;
@@ -1132,21 +1136,20 @@ a:hover {
 }
 .button__link:hover {
   background-color: #00b767;
-  text-decoration: underline;
+  text-decoration: none;
 }
-/*
-.binding__item:first-child:nth-last-child(2)
-.binding__item:first-child:nth-last-child(2) ~ .binding__item
-  width 50%
-
-.binding__item:first-child:nth-last-child(3)
-.binding__item:first-child:nth-last-child(3) ~ .binding__item
-  width 33.3333%
-
-.binding__item:first-child:nth-last-child(4)
-.binding__item:first-child:nth-last-child(4) ~ .binding__item
-  width 25%
-*/
+.binding__item:first-child:nth-last-child(2),
+.binding__item:first-child:nth-last-child(2) ~ .binding__item {
+  width: 50%;
+}
+.binding__item:first-child:nth-last-child(3),
+.binding__item:first-child:nth-last-child(3) ~ .binding__item {
+  width: 33.3333%;
+}
+.binding__item:first-child:nth-last-child(4),
+.binding__item:first-child:nth-last-child(4) ~ .binding__item {
+  width: 25%;
+}
 @media screen and (max-width:660px) {
   .bindings .binding__list {
     margin-left: -1.5em;
@@ -1157,10 +1160,6 @@ a:hover {
     margin-bottom: 0.5em;
     border-left-width: 0.5em;
     display: inline-block;
-  }
-  .bindings .binding__list .binding__item.binding__item--link {
-    width: auto;
-    display: block;
   }
 }
 .binding__link {
@@ -1183,19 +1182,38 @@ a:hover {
 }
 .binding__link:hover {
   background-color: #806bb4;
+  text-decoration: none;
+}
+.overlay--text {
+  background-color: rgba(58,39,101,0.8);
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  padding: 0.5em 0.7em;
+  display: inline-block;
+  white-space: nowrap;
 }
 .binding__bg {
   background-image: url("sprite.png");
   background-repeat: no-repeat;
-  position: relative;
 }
 .binding__bg.binding--nodejs {
-  top: 41px;
   width: 140px;
-  margin: 0 auto;
+  margin: 41px auto 0;
   height: 60px;
   display: block;
   background-position: -196px -124px;
+}
+.binding__bg.binding--ruby {
+  width: 132px;
+  margin: 38px auto 0;
+  height: 74px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  background-position: 10px -120px;
+  padding-top: 20px;
+  line-height: 125%;
 }
 .tooling__list {
   font-family: 'Proxima Nova', Helvetica, Arial, sans-serif;
@@ -1215,6 +1233,9 @@ a:hover {
 .tooling__item {
   position: relative;
   display: table-row;
+}
+.tooling__item a {
+  color: #fff;
 }
 .tooling__item .smaller,
 .tooling__item .tooling__text {

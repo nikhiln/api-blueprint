@@ -202,7 +202,7 @@ h1
     color $greyviolet
     padding 2*$space 0
     display block
-    margin-bottom (3*$space)
+    margin-bottom (4*$space)
     font-size 1.5em
     white-space pre
     overflow auto
@@ -221,6 +221,8 @@ h1
       position: absolute
       left: 0
       color: #827dba
+      pointer-events none
+      
       content: "0" counter(linenumber)
 
 .hello--color--method
@@ -250,7 +252,7 @@ h1
     width: 44%
     text-decoration none
     &:hover
-      text-decoration underline
+      text-decoration none
 
   .link--getStarted
     color: #fff
@@ -435,12 +437,12 @@ p
   margin-bottom:$gutter
 
 a
-  color:$green
-  text-decoration:underline
+  color $green
+  text-decoration underline
 
   &:hover
-    color: $white
-    text-decoration:underline
+    color $white
+    text-decoration underline
 
 .demo-block
   background-color:$color
@@ -451,7 +453,7 @@ a
   background-image: linear-gradient(top, #2a1b52, $violet 800px)
 
 .highlightedGreen
-  margin-top (2*$space)
+  margin-top (4*$space)
   background-color $darkgreen
   border-radius $space
   padding (3*$space)
@@ -821,6 +823,7 @@ for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
 .started__texts
   color $lighterviolet
   font-size 1.4em
+  padding-top 1em
 
 .started
   font-family 'Proxima Nova', Helvetica, Arial, sans-serif
@@ -858,12 +861,9 @@ for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
   pre + .subnotes
     margin-top -0.5em
     margin-bottom 0
-    font-size 85%
 
 .started__texts--subheading
-  font-family 'TitilliumText', Helvetica, Arial, sans-serif
-  font-weight 200
-  margin-bottom 0
+  margin-bottom 1em
   font-size 1.25em
 
 .text--italics
@@ -871,10 +871,10 @@ for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
 
 .bindings
   font-family 'Proxima Nova', Helvetica, Arial, sans-serif
-  padding-bottom (3*$space)
+  padding-bottom (4*$space)
 
 .binding__list
-  padding 0
+  padding 0 0 3em 0
   margin 0 0 0 -3em
   list-style-type none
   display block
@@ -887,15 +887,19 @@ for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
   min-height 150px
   text-align center
   font-size 3em
+  overflow hidden
   width 25%
   border-left 1em solid $transparentC
   vertical-align top
 
   &.binding__item--link
+  &.binding__item--making
     line-height 26px
     font-size 1.4em
     border-left-width 2em
     padding 30px 1em 0
+  &.binding__item--making
+    padding-top 0px
 
 .binding__item--link--border
   position absolute
@@ -924,9 +928,8 @@ for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
 
   &:hover
     background-color darken(@background-color, 15%)
-    text-decoration underline
+    text-decoration none
 
-/*
 .binding__item:first-child:nth-last-child(2)
 .binding__item:first-child:nth-last-child(2) ~ .binding__item
   width 50%
@@ -938,7 +941,6 @@ for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
 .binding__item:first-child:nth-last-child(4)
 .binding__item:first-child:nth-last-child(4) ~ .binding__item
   width 25%
-*/
 
 @media screen and (max-width:660px)
   .bindings .binding__list
@@ -949,10 +951,6 @@ for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
     margin-bottom 0.5em
     border-left-width 0.5em
     display inline-block
-
-  .bindings .binding__list .binding__item.binding__item--link
-    width auto
-    display block
 
 .binding__link
   position absolute
@@ -966,23 +964,38 @@ for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
   color $white
   font-weight bold
   transition all 0.2s linear
-  
+
   &:hover
     background-color lighten(@background-color, 15%)
+    text-decoration none
+
+.overlay--text
+  background-color rgba(#3a2765, 80%)
+  border-radius 5px
+  padding 0.5em 0.7em
+  display inline-block
+  white-space nowrap
 
 .binding__bg
   background-image url('sprite.png')
   background-repeat no-repeat
-  position relative
 
   &.binding--nodejs
-    top 41px
     width 140px
-    margin 0 auto
+    margin 41px auto 0
     height 60px
     display block
     background-position -196px -124px
 
+  &.binding--ruby
+    width 132px
+    margin 38px auto 0
+    height 74px
+    box-sizing border-box
+    display block
+    background-position 10px -120px
+    padding-top 20px
+    line-height 125%
 
 .tooling__list
   font-family 'Proxima Nova', Helvetica, Arial, sans-serif
@@ -1001,6 +1014,9 @@ for $dur in 0.5s 1s 1.5s 2s 2.5s 3s 3.5s 4s 4.5s 5s 5.5s 6s 6.5s 7s 7.5s 8s
 .tooling__item
   position relative
   display table-row
+
+  a
+    color $white
 
   .smaller
   .tooling__text
