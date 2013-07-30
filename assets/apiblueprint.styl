@@ -438,25 +438,45 @@ h1
 
 .examples__tabs--wrap
   width 100%
-  padding $space 0 0 0
+  padding 0
   margin 0
   overflow hidden
 
 .examples__links
-  padding $space 0 (3*$space)
-  font-size 1.5em
-  
+  padding (1.5*$space) 0 (3*$space)
+  font-size 1.3em
+  line-height 1.4
+  @media screen and (max-width:660px)
+    padding-bottom 0
+
   a
+    text-decoration none
     color $white
-    
+
     &:last-of-type
       float right
 
+.examples__ico--full
+.examples__ico--more
+  float left
+  height 20px
+  width 30px
+  background url('anim-icons.png') 0 -68px no-repeat
+  opacity 0.3
+  transition 0.2s opacity linear
+
+.examples__ico--full
+  background-position -171px -65px
+
+.examples__links a:hover
+  text-decoration underline
+  .examples__ico--full
+  .examples__ico--more
+    opacity 1
+
 .examples__tab
-  display inline-block
   width 25%
   border-right 1px solid lighten(#51407e, 10%)
-  box-sizing border-box
   overflow hidden
   background-color #4c3d76
 
@@ -480,13 +500,21 @@ h1
     font-size 1.5em
     color #b8a4eb
     font-weight bold
-    padding $space 0
+    padding $space 0.5em
     text-align center
 
   pre
     display block
     max-height 15em
     overflow auto
+    background-color $darkerviolet
+    color $greyviolet
+    padding $space
+    display block
+    margin-bottom (4*$space)
+    font-size 1.5em
+    white-space pre
+
 .js .examples__tab
   pre
     display none
@@ -495,10 +523,23 @@ h1
   .examples__tabs--wrap
     .examples__tab
       a
-        font-size 1.1em
+        font-size 1.3em
+
+.examples__tabs
+  margin $space 0 0 0
+  display table
+  width 100%
+  table-layout fixed
+.examples__tabs--wrap
+  display table-row
+.examples__tab
+  display table-cell
+  vertical-align middle
+
 #editor_ace
 #output_ast
-  height 300px
+  font-family 'Source Code Pro', monospace
+  height 215px
   width 100%
   position relative
   line-height 21px
@@ -919,10 +960,10 @@ a
 
   &.binding__item--link
   &.binding__item--making
-    line-height 26px
+    line-height 20px
     font-size 1.4em
     border-left-width 2em
-    padding 30px 1em 0
+    padding 35px 1em 0
   &.binding__item--making
     padding-top 0px
 
@@ -1013,13 +1054,13 @@ a
     background-position -196px -124px
 
   &.binding--ruby
-    width 132px
-    margin 38px auto 0
-    height 74px
+    width 150px
+    margin 25px auto 0
+    height 110px
     box-sizing border-box
     display block
-    background-position 10px -120px
-    padding-top 20px
+    background-position 21px -98px
+    padding-top 30px
     line-height 125%
 
 .tooling__list
@@ -1135,6 +1176,30 @@ a
   background-position -795px -135px
   height 62px
   width 65px
+
+.tooling__ico--question
+  position relative
+.tooling__ico--question:before
+.tooling__ico--question:after
+.tooling__icon--cube
+  content '?'
+  position absolute
+  right 0
+  top 25px
+  margin 0 9px
+  height 20px
+  width 20px
+  font-weight bold
+  font-size 22px
+  transform skewY(327deg)
+.tooling__ico--question:after
+  right auto
+  left 0
+  transform skewY(32deg)
+.tooling__icon--cube
+  transform rotate(88deg) skewX(30deg) skewY(321deg)
+  top 3px
+  margin 0 20px 0 0
 
 .fork__link
   box-sizing border-box
@@ -1324,7 +1389,7 @@ a
 
 .examples__json
   position relative
-  border-top 1px dashed #554b6e
+  border-top 1px dashed lighten(#554b6e, 10%)
   .ace-twilight
     color #9086ae
     &.ace_editor
