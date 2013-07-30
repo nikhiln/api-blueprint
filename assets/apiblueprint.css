@@ -59,6 +59,14 @@ html {
   padding-left: 90px;
   background: url("logo_apiblueprint.png") no-repeat left center;
 }
+@media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
+  .logo__bg {
+    background-image: url("logo_apiblueprint@2x.png");
+    -webkit-background-size: 62px auto;
+    -moz-background-size: 62px auto;
+    background-size: 62px auto;
+  }
+}
 .logo__spot {
   padding-top: 1em;
   font-weight: 100;
@@ -648,15 +656,16 @@ a:hover {
   border-radius: 1em;
   padding: 3em;
   margin-bottom: 1em;
+  position: relative;
 }
 .highlightedGreen h2 {
   margin: 0;
-  padding: 0 0 0.3em 0;
+  padding: 0 0 0.3em 85px;
   font-size: 230%;
   font-weight: normal;
 }
 .highlightedGreen p {
-  padding: 0;
+  padding: 0 0 0 85px;
   margin: 0;
   font-size: 180%;
   font-weight: normal;
@@ -675,7 +684,9 @@ a:hover {
   }
 }
 .highlightedGreen__bg {
-  float: left;
+  position: absolute;
+  left: 3em;
+  top: 3em;
   height: 80px;
   width: 60px;
   margin-right: 2em;
@@ -683,7 +694,10 @@ a:hover {
 }
 @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
   .highlightedGreen__bg {
-    background: url("sprite@2x.png") -1140px -240px no-repeat;
+    background-image: url("sprite@2x.png");
+    -webkit-background-size: 853px auto;
+    -moz-background-size: 853px auto;
+    background-size: 853px auto;
   }
 }
 .subnotes {
@@ -1048,31 +1062,19 @@ a:hover {
 @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
   .versus__item .versus__bg {
     background-image: url("sprite@2x.png");
+    -webkit-background-size: 853px auto;
+    -moz-background-size: 853px auto;
+    background-size: 853px auto;
   }
 }
 .versus--diy {
   background-position: 5px 0;
 }
-@media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
-  .versus--diy {
-    background-position: 10px 0;
-  }
-}
 .versus--swagger {
   background-position: -316px 0;
 }
-@media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
-  .versus--swagger {
-    background-position: -632px 0;
-  }
-}
 .versus--google {
   background-position: -660px 0;
-}
-@media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
-  .versus--google {
-    background-position: -1320px 0;
-  }
 }
 .started__texts {
   color: #b09ee1;
@@ -1252,6 +1254,9 @@ a:hover {
 @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
   .binding__bg {
     background-image: url("sprite@2x.png");
+    -webkit-background-size: 853px auto;
+    -moz-background-size: 853px auto;
+    background-size: 853px auto;
   }
 }
 .binding__bg.binding--nodejs {
@@ -1261,27 +1266,17 @@ a:hover {
   display: block;
   background-position: -196px -124px;
 }
-@media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
-  .binding__bg.binding--nodejs {
-    background-position: -382px -248px;
-  }
-}
 .binding__bg.binding--ruby {
-  width: 150px;
+  width: 130px;
   margin: 25px auto 0;
   height: 110px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   display: block;
-  background-position: 21px -98px;
+  background-position: 15px -98px;
   padding-top: 30px;
   line-height: 125%;
-}
-@media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
-  .binding__bg.binding--ruby {
-    background-position: 42px -196px;
-  }
 }
 .tooling__list {
   font-family: 'Proxima Nova', Helvetica, Arial, sans-serif;
@@ -1314,7 +1309,10 @@ a:hover {
 }
 @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
   .tooling__share--ico::before {
-    background: url("sprite@2x.png") -856px -340px no-repeat;
+    background-image: url("sprite@2x.png");
+    -webkit-background-size: 853px auto;
+    -moz-background-size: 853px auto;
+    background-size: 853px auto;
   }
 }
 .tooling__item {
@@ -1407,17 +1405,15 @@ a:hover {
 @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
   .tooling__ico__logo {
     background-image: url("sprite@2x.png");
+    -webkit-background-size: 853px auto;
+    -moz-background-size: 853px auto;
+    background-size: 853px auto;
   }
 }
 .tooling__ico__logo--apiary {
   background-position: -693px -140px;
   height: 60px;
   width: 65px;
-}
-@media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
-  .tooling__ico__logo--apiary {
-    background-position: -1386px -280px;
-  }
 }
 .tooling__ico--construction {
   background-position: -795px -135px;
