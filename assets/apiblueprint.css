@@ -1034,7 +1034,7 @@ a:hover {
 }
 .versus__item .versus__bg {
   display: block;
-  height: 100px;
+  height: 95px;
   width: 100px;
   margin: 1em auto 1em;
   background-image: url("sprite.png");
