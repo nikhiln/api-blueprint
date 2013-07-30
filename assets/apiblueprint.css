@@ -515,6 +515,13 @@ h1 {
 .examples__links a:last-of-type {
   float: right;
 }
+@media screen and (max-width:660px) {
+  .examples .examples__links a {
+    float: none;
+    margin-top: 0.5em;
+    display: block;
+  }
+}
 .examples__ico--full,
 .examples__ico--more {
   float: left;
@@ -810,7 +817,7 @@ a:hover {
   height: 36px;
   width: 36px;
   top: -59px;
-  left: 323px;
+  left: 303px;
   margin-top: -18px;
   background-color: #ec9c4a;
   background-position: -113px -32px;
@@ -1154,9 +1161,10 @@ a:hover {
   font-size: 1.4em;
   border-left-width: 2em;
   padding: 35px 1em 0;
+  text-align: center;
 }
 .binding__item.binding__item--making {
-  padding-top: 0px;
+  padding: 0;
 }
 .binding__item--link--border {
   position: absolute;
@@ -1267,7 +1275,7 @@ a:hover {
   background-position: -196px -124px;
 }
 .binding__bg.binding--ruby {
-  width: 130px;
+  width: 140px;
   margin: 25px auto 0;
   height: 110px;
   -webkit-box-sizing: border-box;
